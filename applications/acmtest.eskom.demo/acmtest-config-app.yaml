@@ -4,7 +4,7 @@ metadata:
   name: acmtest-config
 spec:
   destination:
-    name: acmtest
+    name: local-cluster
   project: acmtest
   source:
     path: cluster-config/acmtest.eskom.demo
