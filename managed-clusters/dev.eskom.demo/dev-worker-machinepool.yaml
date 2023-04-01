@@ -1,7 +1,7 @@
 apiVersion: hive.openshift.io/v1
 kind: MachinePool
 metadata:
-  name: acmtest-worker
+  name: dev-worker
   namespace: 'acm-dev'
 spec:
   clusterDeploymentRef:
