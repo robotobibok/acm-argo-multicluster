@@ -8,7 +8,7 @@ spec:
     kind: '*'
   destinations:
   - namespace: '*'
-    name: local-cluster
+    name: in-cluster
     server: '*'
   sourceRepos:
   - '*'
