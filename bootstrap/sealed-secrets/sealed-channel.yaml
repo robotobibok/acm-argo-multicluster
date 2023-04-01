@@ -1,0 +1,7 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: sealed-secrets
+spec:
+  type: Git
+  pathname: https://github.com/robotobibok/acm-argo-gogogo.git

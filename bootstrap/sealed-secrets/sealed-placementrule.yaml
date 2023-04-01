@@ -1,0 +1,7 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: sealed-secrets
+spec:
+  clusters:
+  - name: local-cluster
