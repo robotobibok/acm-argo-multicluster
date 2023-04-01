@@ -4,6 +4,7 @@ metadata:
   annotations:
     apps.open-cluster-management.io/github-path: applications
     apps.open-cluster-management.io/reconcile-option: replace
+    apps.open-cluster-management.io/git-branch: main
   name: argocd-apps
 spec:
   channel: openshift-gitops/argocd-apps

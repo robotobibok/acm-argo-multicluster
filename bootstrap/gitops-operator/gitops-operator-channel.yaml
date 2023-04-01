@@ -1,6 +1,7 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
+  namespace: openshift-gitops
   name: gitops-operator
 spec:
   type: Git
