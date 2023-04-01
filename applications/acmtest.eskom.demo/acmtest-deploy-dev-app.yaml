@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: acmtest-deploy-dev
+spec:
+  destination:
+    name: in-cluster
+  project: acmtest
+  source:
+    path: cluster-deploy/dev.eskom.demo
+    repoURL: https://github.com/robotobibok/acm-argo-gogogo
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

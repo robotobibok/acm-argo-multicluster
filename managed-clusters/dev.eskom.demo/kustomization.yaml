@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- dev-clusterdeployment.yaml
+- dev-managedcluster.yaml
+- dev-managedclusterinfo.yaml
+- dev-worker-machinepool.yaml
+#- mycluster-infra-machinepool.yaml
+- dev-klusterletaddonconfig.yaml
+- secrets/dev-vsphere-creds.yaml
+- secrets/dev-install-config.yaml
+- secrets/dev-pull-secret.yaml
+- secrets/dev-ssh-private-key.yaml

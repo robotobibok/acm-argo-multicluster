@@ -1,0 +1,17 @@
+apiVersion: hive.openshift.io/v1
+kind: MachinePool
+metadata:
+  name: acmtest-worker
+  namespace: 'acm-dev'
+spec:
+  clusterDeploymentRef:
+    name: 'dev'
+  name: worker
+  platform:
+    vsphere:
+      cpus: 4
+      coresPerSocket: 2
+      memoryMB: 16384
+      osDisk:
+        diskSizeGB: 120
+  replicas: 2

@@ -1,0 +1,38 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: dev
+  namespace: acm-dev
+  labels:
+    env: dev
+    cloud: 'vSphere'
+    vendor: OpenShift
+    cluster.open-cluster-management.io/clusterset: 'default'
+spec:
+  baseDomain: eskom.demo
+  clusterName: dev
+  controlPlaneConfig:
+    servingCertificates: {}
+  installAttemptsLimit: 2
+  installed: false
+  platform:
+    vsphere:
+      cluster: Synergy
+      certificatesSecretRef:
+        name: dev-vsphere-certs
+      credentialsSecretRef:
+        name: dev-vsphere-creds
+      vCenter: vcenter.elab.local
+      datacenter: Datacenter
+      defaultDatastore: ceph_hdd
+      network: 'vlan141'
+  provisioning:
+    installConfigSecretRef:
+      name: dev-install-config
+    sshPrivateKeySecretRef:
+      name: dev-ssh-private-key
+    imageSetRef:
+       #quay.io/openshift-release-dev/ocp-release:4.11.32-x86_64
+      name: img4.12.9-multi-appsub
+  pullSecretRef:
+    name: dev-pull-secret
