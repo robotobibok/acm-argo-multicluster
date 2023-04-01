@@ -4,4 +4,4 @@ metadata:
   name: gitops-operator
 spec:
   type: Git
-  pathname: https://github.com/robotobibok/acm-argo-gogogo
+  pathname: https://github.com/robotobibok/acm-argo-gogogo.git
