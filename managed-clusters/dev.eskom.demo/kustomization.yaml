@@ -8,6 +8,7 @@ resources:
 - dev-worker-machinepool.yaml
 #- mycluster-infra-machinepool.yaml
 - dev-klusterletaddonconfig.yaml
+- secrets/dev-vsphere-certs.yaml
 - secrets/dev-vsphere-creds.yaml
 - secrets/dev-install-config.yaml
 - secrets/dev-pull-secret.yaml

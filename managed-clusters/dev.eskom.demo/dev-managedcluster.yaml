@@ -3,10 +3,10 @@ kind: ManagedCluster
 metadata:
   labels:
     cloud: vSphere
-    name: 'dev'
+    name: 'dev.eskom.demo'
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
     env: 'dev'
-  name: 'acm-dev'
+  name: 'dev'
 spec:
   hubAcceptsClient: true
