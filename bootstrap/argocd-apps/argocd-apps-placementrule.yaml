@@ -4,4 +4,4 @@ metadata:
   name: argocd-apps
 spec:
   clusters:
-  - name: in-cluster
+  - name: local-cluster
