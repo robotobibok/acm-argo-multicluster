@@ -7,3 +7,4 @@ resources:
 - acmtest-appproj.yaml
 - acmtest-config-app.yaml
 - acmtest-deploy-dev-app.yaml
+- acmtest-deploy-test-app.yaml
