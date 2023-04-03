@@ -1,7 +1,7 @@
 apiVersion: hive.openshift.io/v1
 kind: MachinePool
 metadata:
-  name: dev-worker
+  name: dev-infra
   namespace: 'acm-dev'
 spec:
   clusterDeploymentRef:
@@ -15,3 +15,8 @@ spec:
       osDisk:
         diskSizeGB: 120
   replicas: 2
+  labels:
+    node-role.kubernetes.io/infra: ""
+  taints:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/infra

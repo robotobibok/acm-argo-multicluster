@@ -1,7 +1,7 @@
 apiVersion: agent.open-cluster-management.io/v1
 kind: KlusterletAddonConfig
 metadata:
-  name: 'dev'
+  name: 'dev.eskom.demo'
   namespace: 'acm-dev'
 spec:
   clusterName: 'dev.eskom.demo'

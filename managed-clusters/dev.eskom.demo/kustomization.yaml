@@ -5,9 +5,9 @@ resources:
 - acm-dev-ns.yaml
 - dev-clusterdeployment.yaml
 - dev-managedcluster.yaml
-#- dev-managedclusterinfo.yaml
+- dev-managedclusterinfo.yaml
 - dev-worker-machinepool.yaml
-#- mycluster-infra-machinepool.yaml
+- dev-infra-machinepool.yaml
 - dev-klusterletaddonconfig.yaml
 - secrets/dev-vsphere-certs.yaml
 - secrets/dev-vsphere-creds.yaml

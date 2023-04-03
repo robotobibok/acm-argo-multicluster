@@ -7,6 +7,6 @@ metadata:
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
     env: 'dev'
-  name: 'dev'
+  name: 'dev.eskom.demo'
 spec:
   hubAcceptsClient: true

@@ -1,7 +1,7 @@
 apiVersion: hive.openshift.io/v1
 kind: ClusterDeployment
 metadata:
-  name: dev
+  name: dev.eskom.demo
   namespace: acm-dev
   labels:
     env: dev
@@ -13,8 +13,7 @@ spec:
   clusterName: dev
   controlPlaneConfig:
     servingCertificates: {}
-  installAttemptsLimit: 2
-  installed: false
+  installAttemptsLimit: 1
   platform:
     vsphere:
       cluster: Synergy
