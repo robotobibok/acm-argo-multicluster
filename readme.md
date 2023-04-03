@@ -13,3 +13,13 @@ one or more objects failed to apply, reason: secrets is forbidden: User "system:
 
 kubeseal --format yaml --controller-namespace sealed-secrets <htpasswd-secret.yaml > htpasswd-sealed.yaml
 
+
+po zainstalowaniu nie dodaje do ACM:  
+Failed sync attempt to a2717a708848ed84efd1fab7f4e047a5fda55f0d: one or more objects failed to apply, reason: admission webhook "clusterdeploymentvalidators.admission.hive.openshift.io" denied the request: ClusterDeployment.hive.openshift.io "dev" is invalid: spec.installed: Invalid value: false: cannot make uninstalled once installed
+
+diff z managedcluster:
+    name: dev
+    name: dev.eskom.demo
+diff z clusterdeployment
+  installed: true
+  installed: false
