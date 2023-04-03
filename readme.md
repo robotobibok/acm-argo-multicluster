@@ -23,3 +23,6 @@ diff z managedcluster:
 diff z clusterdeployment
   installed: true
   installed: false
+
+
+Failed sync attempt to 68f1275f9eeaee8a785dbd9878ad613b3297abd4: one or more objects failed to apply, reason: admission webhook "machinepoolvalidators.admission.hive.openshift.io" denied the request: MachinePool.hive.openshift.io "dev-infra" is invalid: metadata.name: Invalid value: "dev-infra": name must be ${CD_NAME}-${POOL_NAME}, where ${CD_NAME} is the name of the clusterdeployment and ${POOL_NAME} is the name of the remote machine pool,admission webhook "machinepoolvalidators.admission.hive.openshift.io" denied the request: MachinePool.hive.openshift.io "dev-worker" is invalid: metadata.name: Invalid value: "dev-worker": name must be ${CD_NAME}-${POOL_NAME}, where ${CD_NAME} is the name of the clusterdeployment and ${POOL_NAME} is the name of the remote machine pool

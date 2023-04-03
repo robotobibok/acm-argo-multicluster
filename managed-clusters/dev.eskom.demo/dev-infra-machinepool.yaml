@@ -1,7 +1,7 @@
 apiVersion: hive.openshift.io/v1
 kind: MachinePool
 metadata:
-  name: dev-infra
+  name: dev.eskom.demo-infra
   namespace: 'acm-dev'
 spec:
   clusterDeploymentRef:
