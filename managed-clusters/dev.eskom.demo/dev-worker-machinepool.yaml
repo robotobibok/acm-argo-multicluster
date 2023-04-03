@@ -1,7 +1,7 @@
 apiVersion: hive.openshift.io/v1
 kind: MachinePool
 metadata:
-  name: dev.eskom.demo-worker
+  name: 'dev.eskom.demo-worker'
   namespace: 'acm-dev'
 spec:
   clusterDeploymentRef:
@@ -13,5 +13,5 @@ spec:
       coresPerSocket: 2
       memoryMB: 16384
       osDisk:
-        diskSizeGB: 120
+        diskSizeGB: 100
   replicas: 2

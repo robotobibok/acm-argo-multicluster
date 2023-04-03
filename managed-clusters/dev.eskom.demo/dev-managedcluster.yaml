@@ -8,5 +8,6 @@ metadata:
     cluster.open-cluster-management.io/clusterset: 'default'
     env: 'dev'
   name: 'dev.eskom.demo'
+  namespace: acm-dev
 spec:
   hubAcceptsClient: true

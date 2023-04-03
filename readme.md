@@ -26,3 +26,10 @@ diff z clusterdeployment
 
 
 Failed sync attempt to 68f1275f9eeaee8a785dbd9878ad613b3297abd4: one or more objects failed to apply, reason: admission webhook "machinepoolvalidators.admission.hive.openshift.io" denied the request: MachinePool.hive.openshift.io "dev-infra" is invalid: metadata.name: Invalid value: "dev-infra": name must be ${CD_NAME}-${POOL_NAME}, where ${CD_NAME} is the name of the clusterdeployment and ${POOL_NAME} is the name of the remote machine pool,admission webhook "machinepoolvalidators.admission.hive.openshift.io" denied the request: MachinePool.hive.openshift.io "dev-worker" is invalid: metadata.name: Invalid value: "dev-worker": name must be ${CD_NAME}-${POOL_NAME}, where ${CD_NAME} is the name of the clusterdeployment and ${POOL_NAME} is the name of the remote machine pool
+
+
+
+[ocp@bastion ~]$ oc -n multicluster-engine logs -l app=managedcluster-import-controller-v2 --tail=-1  
+2023-04-03T19:13:14.350304389Z  INFO    importconfig-controller Reconciling managed cluster import secret       {"Request.Name": "dev.eskom.demo"}
+I0403 19:13:14.428436       1 event.go:285] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"multicluster-engine", Name:"managedcluster-import-controller-v2", UID:"274b5e9f-b74f-454e-b636-e573238d346b", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Warning' reason: 'ServiceAccountCreateFailed' Failed to create ServiceAccount/dev.eskom.demo-bootstrap-sa -n dev.eskom.demo: namespaces "dev.eskom.demo" not found
+
