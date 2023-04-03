@@ -1,0 +1,13 @@
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  labels:
+    cloud: vSphere
+    name: 'test.eskom.demo'
+    vendor: OpenShift
+    cluster.open-cluster-management.io/clusterset: 'default'
+    env: 'test'
+  name: 'test.eskom.demo'
+  namespace: acm-test
+spec:
+  hubAcceptsClient: true

@@ -1,0 +1,37 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: test.eskom.demo
+  namespace: acm-test
+  labels:
+    env: test
+    cloud: 'vSphere'
+    vendor: OpenShift
+    cluster.open-cluster-management.io/clusterset: 'default'
+spec:
+  baseDomain: eskom.demo
+  clusterName: test
+  controlPlaneConfig:
+    servingCertificates: {}
+  installAttemptsLimit: 1
+  platform:
+    vsphere:
+      cluster: Synergy
+      certificatesSecretRef:
+        name: test-vsphere-certs
+      credentialsSecretRef:
+        name: test-vsphere-creds
+      vCenter: vcenter.elab.local
+      datacenter: Datacenter
+      defaultDatastore: ceph_hdd
+      network: 'vlan141'
+  provisioning:
+    installConfigSecretRef:
+      name: test-install-config
+    sshPrivateKeySecretRef:
+      name: test-ssh-private-key
+    imageSetRef:
+       #quay.io/openshift-release-test/ocp-release:4.11.32-x86_64
+      name: img4.12.9-multi-appsub
+  pullSecretRef:
+    name: test-pull-secret
