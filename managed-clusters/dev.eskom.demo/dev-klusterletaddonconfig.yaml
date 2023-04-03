@@ -4,7 +4,7 @@ metadata:
   name: 'dev'
   namespace: 'acm-dev'
 spec:
-  clusterName: 'dev'
+  clusterName: 'dev.eskom.demo'
   clusterNamespace: 'acm-dev'
   clusterLabels:
     cloud: vSphere
