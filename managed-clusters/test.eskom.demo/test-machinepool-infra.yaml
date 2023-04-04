@@ -1,12 +1,12 @@
 apiVersion: hive.openshift.io/v1
 kind: MachinePool
 metadata:
-  name: 'test.eskom.demo-worker'
-  namespace: 'acm-test'
+  name: test-infra
+  namespace: test
 spec:
   clusterDeploymentRef:
-    name: 'test.eskom.demo'
-  name: worker
+    name: test
+  name: infra
   platform:
     vsphere:
       cpus: 4
@@ -15,3 +15,8 @@ spec:
       osDisk:
         diskSizeGB: 100
   replicas: 2
+  labels:
+    node-role.kubernetes.io/infra: ""
+  taints:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/infra

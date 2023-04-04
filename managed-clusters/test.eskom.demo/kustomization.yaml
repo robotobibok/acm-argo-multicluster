@@ -2,12 +2,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- acm-test-ns.yaml
+- test-ns.yaml
 - test-clusterdeployment.yaml
 - test-managedcluster.yaml
 - test-managedclusterinfo.yaml
-- test-worker-machinepool.yaml
-- test-infra-machinepool.yaml
+- test-machinepool-worker.yaml
+- test-machinepool-infra.yaml
 - test-klusterletaddonconfig.yaml
 - secrets/test-vsphere-certs.yaml
 - secrets/test-vsphere-creds.yaml

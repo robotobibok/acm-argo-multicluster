@@ -1,13 +1,13 @@
 apiVersion: hive.openshift.io/v1
 kind: ClusterDeployment
 metadata:
-  name: test.eskom.demo
-  namespace: acm-test
+  name: test
+  namespace: test
   labels:
     env: test
-    cloud: 'vSphere'
+    cloud: vSphere
     vendor: OpenShift
-    cluster.open-cluster-management.io/clusterset: 'default'
+    cluster.open-cluster-management.io/clusterset: default
 spec:
   baseDomain: eskom.demo
   clusterName: test
@@ -24,7 +24,7 @@ spec:
       vCenter: vcenter.elab.local
       datacenter: Datacenter
       defaultDatastore: ceph_hdd
-      network: 'vlan141'
+      network: vlan141
   provisioning:
     installConfigSecretRef:
       name: test-install-config
