@@ -1,11 +1,11 @@
 apiVersion: agent.open-cluster-management.io/v1
 kind: KlusterletAddonConfig
 metadata:
-  name: 'dev.eskom.demo'
-  namespace: 'acm-dev'
+  name: dev
+  namespace: dev
 spec:
-  clusterName: 'dev.eskom.demo'
-  clusterNamespace: 'acm-dev'
+  clusterName: dev
+  clusterNamespace: dev
   clusterLabels:
     cloud: vSphere
     vendor: OpenShift
