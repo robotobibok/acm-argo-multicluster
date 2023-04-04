@@ -31,5 +31,8 @@ Failed sync attempt to 68f1275f9eeaee8a785dbd9878ad613b3297abd4: one or more obj
 
 [ocp@bastion ~]$ oc -n multicluster-engine logs -l app=managedcluster-import-controller-v2 --tail=-1  
 2023-04-03T19:13:14.350304389Z  INFO    importconfig-controller Reconciling managed cluster import secret       {"Request.Name": "dev.eskom.demo"}
-I0403 19:13:14.428436       1 event.go:285] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"multicluster-engine", Name:"managedcluster-import-controller-v2", UID:"274b5e9f-b74f-454e-b636-e573238d346b", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Warning' reason: 'ServiceAccountCreateFailed' Failed to create ServiceAccount/dev.eskom.demo-bootstrap-sa -n dev.eskom.demo: namespaces "dev.eskom.demo" not found
+I0403 19:13:14.428436       1 event.go:285] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"multicluster-engine", Name:"managedcluster-import-controller-v2", UID:"274b5e9f-b74f-454e-b636-e573238d346b", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Warning' reason: 'ServiceAccountCreateFailed' Failed to create ServiceAccount/dev.eskom.demo-bootstrap-sa -n dev.eskom.demo: namespaces "dev.eskom.demo" not found  
+
+rozwalila sie konfiguracja klastra
+rpc error: code = Unknown desc = Manifest generation error (cached): `kustomize build .cluster-config/acmtest.eskom.demo` failed exit status 1: Error: accumulating resources: accumulation err='accumulating resources from '../../manifests/oauth-htpasswd': '.manifests/oauth-htpasswd' must resolve to a file': recursed accumulation of path '.manifests/oauth-htpasswd': accumulating resources: accumulation err='accumulating resources from 'htpasswd-oauth.yaml': missing metadata.name in object {{config.openshift.io/v1 OAuth} {{ } map[] map[argocd.argoproj.io/sync-options:Prune=false]}}': got file 'htpasswd-oauth.yaml', but '.manifests/oauth-htpasswd/htpasswd-oauth.yaml' must be a directory to be a root
 
