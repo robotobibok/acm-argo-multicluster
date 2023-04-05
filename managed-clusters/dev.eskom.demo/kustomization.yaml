@@ -7,7 +7,7 @@ resources:
 - dev-managedcluster.yaml
 - dev-managedclusterinfo.yaml
 - dev-machinepool-worker.yaml
-#- dev-machinepool-infra.yaml
+#- dev-machinepool-infra.yaml # na dev bez infra node
 - dev-klusterletaddonconfig.yaml
 - secrets/dev-vsphere-certs.yaml
 - secrets/dev-vsphere-creds.yaml
