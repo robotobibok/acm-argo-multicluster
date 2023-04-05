@@ -14,4 +14,4 @@ spec:
       memoryMB: 16384
       osDisk:
         diskSizeGB: 100
-  replicas: 2
+  replicas: 3
