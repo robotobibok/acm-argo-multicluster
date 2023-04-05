@@ -11,6 +11,7 @@ spec:
     vendor: OpenShift
   applicationManager:
     enabled: true
+    argocdCluster: true
   policyController:
     enabled: true
   searchCollector:
