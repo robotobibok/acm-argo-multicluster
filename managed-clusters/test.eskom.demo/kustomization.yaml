@@ -6,7 +6,7 @@ resources:
 - test-clusterdeployment.yaml
 - test-managedcluster.yaml
 - test-managedclusterinfo.yaml
-- test-machinepool-worker.yaml
+#- test-machinepool-worker.yaml #niepotrzebna, mozna sterowac iloscia workerow z install-config
 - test-machinepool-infra.yaml
 - test-klusterletaddonconfig.yaml
 - secrets/test-vsphere-certs.yaml
