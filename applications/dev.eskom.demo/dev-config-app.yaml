@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-config
+spec:
+  destination:
+    name: dev
+  project: dev
+  source:
+    path: cluster-config/dev.eskom.demo
+    repoURL: https://github.com/robotobibok/acm-argo-gogogo
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false #nie kasujemy automatycznie
+      selfHeal: true
