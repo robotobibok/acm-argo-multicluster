@@ -1,3 +1,7 @@
+problem:  deploy + management wielu klastrow OCP w modelu gitops
+uzyte narzędzia: Red Hat Advcanced Cluster Management, ArgoCD (Red Hat Gitops), Sealed Secrets 
+
+
 deploy z bastiona, user ocp  
 ``export KUBECONFIG=/home/ocp/infra.eskom.demo/auth/kubeconfig``
 
@@ -6,21 +10,14 @@ start z pierwszego klastra (infra), wymaga zainstalowanego ACM:
 oc apply -k bootstrap/namespaces
 oc apply -k bootstrap/gitops-operator
 oc apply -k bootstrap/sealed-secrets
+oc apply -k bootstrap/argocd-apps 
 ```
-pozniej juz zmiany bezposrednio w repo, dodawanie aplikacji w ``applications/`` po czym odswiezenie definicji aplikacji w ACM, ktory nanosi juz wszystko na Argo, ktore powoluje klastry z ACM :)
+pozniej juz zmiany bezposrednio w repo, dodawanie aplikacji w ``applications/`` po czym odswiezenie definicji aplikacji w ACM, ktory nanosi juz wszystko na Argo, ktore powoluje klastry z ACM
 
-```
-
-```
-
-zeby mozna bylo konfigurowac caly klaster, uprawnienia:
+uprawnienia admina dla Argo:
 ``oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops``
 
-mozna sie bawic bardziej detalicznie:
-```
-one or more objects failed to apply, reason: secrets is forbidden: User "system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller" cannot create resource "secrets" in API group "" in the namespace "openshift-config". Retrying attempt #5 at 8:17PM.
-```
-
+sekrety musza byc wygenerowane ze wskazaniem odpowiedniego ns:
 ``kubeseal --format yaml --controller-namespace sealed-secrets <htpasswd-secret.yaml > htpasswd-sealed.yaml``
 
 ---
@@ -39,13 +36,19 @@ todo
 - etcd szyfrowanie
 - 
 
+maybe
+- bardziej granularne uprawnienia dla Argo
 
 
 ---
 bledy   
 
+uprawnienia dla Argo:
+``one or more objects failed to apply, reason: secrets is forbidden: User "system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller" cannot create resource "secrets" in API group "" in the namespace "openshift-config". Retrying attempt #5 at 8:17PM.``
+
 po zainstalowaniu nie dodaje do ACM:  
 ``Failed sync attempt to a2717a708848ed84efd1fab7f4e047a5fda55f0d: one or more objects failed to apply, reason: admission webhook "clusterdeploymentvalidators.admission.hive.openshift.io" denied the request: ClusterDeployment.hive.openshift.io "dev" is invalid: spec.installed: Invalid value: false: cannot make uninstalled once installed``
+
 ```
 diff z managedcluster:  
     name: dev  
