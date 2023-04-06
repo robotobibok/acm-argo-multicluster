@@ -8,7 +8,7 @@ spec:
   project: acmtest
   source:
     path: cluster-config/acmtest.eskom.demo
-    repoURL: https://github.com/robotobibok/acm-argo-gogogo
+    repoURL: https://github.com/robotobibok/acm-argo-multicluster
     targetRevision: main
   syncPolicy:
     automated:

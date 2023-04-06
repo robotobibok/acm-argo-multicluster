@@ -6,7 +6,7 @@ resources:
 - dev-clusterdeployment.yaml
 - dev-managedcluster.yaml
 - dev-managedclusterinfo.yaml
-- dev-machinepool-worker.yaml
+#- dev-machinepool-worker.yaml # zostajemy przy bazowej MP, szybszy deploy
 #- dev-machinepool-infra.yaml # na dev bez infra node
 - dev-klusterletaddonconfig.yaml
 - secrets/dev-vsphere-certs.yaml

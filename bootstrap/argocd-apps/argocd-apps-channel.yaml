@@ -5,4 +5,4 @@ metadata:
   name: argocd-apps
 spec:
   type: Git
-  pathname: https://github.com/robotobibok/acm-argo-gogogo.git
+  pathname: https://github.com/robotobibok/acm-argo-multicluster.git
