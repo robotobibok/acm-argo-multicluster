@@ -22,10 +22,17 @@ sekrety musza byc wygenerowane ze wskazaniem odpowiedniego ns:
 
 ---
 architektura managed clusters  
+infra: 3xmaster, 5xworker
+- acm
+- gitops
+- odf ? 
+- quay ?  
+
 dev: 3xmaster, 2xworker  
 test: 3xmaster, 3xinfra, 3xworker  
-prod: 3xmaster, 3xinfra, 3xworker
-
+prod: 3xmaster, 3xinfra, 3xworker  
+? dis: jakis klaster disconnected  
+? sno: all-in-one baremetal  
 
 ---
 todo
@@ -38,6 +45,8 @@ todo
 
 maybe
 - bardziej granularne uprawnienia dla Argo
+- maly klaster disconnected
+- baremetal z acm
 
 
 ---
