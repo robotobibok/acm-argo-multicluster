@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: acmtest-config
+  name: infra-config
 spec:
   destination:
     name: in-cluster
-  project: acmtest
+  project: infra
   source:
-    path: cluster-config/acmtest.eskom.demo
+    path: cluster-config/infra.eskom.demo
     repoURL: https://github.com/robotobibok/acm-argo-multicluster
     targetRevision: main
   syncPolicy:

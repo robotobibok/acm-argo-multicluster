@@ -4,7 +4,7 @@ uzyte narzędzia: Red Hat Advcanced Cluster Management, ArgoCD (Red Hat Gitops),
 ```bash
 acm-argo-multicluster
 ├── applications              # definicje aplikacji Argo per klaster
-│   ├── acmtest.eskom.demo    
+│   ├── infra.eskom.demo    
 │   └── dev.eskom.demo
 ├── bootstrap                 # punkt startowy, argocd-apps wskazuje na powyzszy
 │   ├── argocd-apps
@@ -12,7 +12,7 @@ acm-argo-multicluster
 │   ├── namespaces
 │   └── sealed-secrets
 ├── cluster-config            # agreguje konfiguracje z folderu manifests, tu wskazuje folder applications
-│   ├── acmtest.eskom.demo
+│   ├── infra.eskom.demo
 │   ├── dev.eskom.demo
 │   └── test.eskom.demo
 ├── cluster-deploy            # agreguje informacje o deploymencie klastrow z folderu managed-clusters, tu wskazuje folder applications
@@ -115,5 +115,5 @@ I0403 19:13:14.428436       1 event.go:285] Event(v1.ObjectReference{Kind:"Deplo
 
 rozwalila sie konfiguracja klastra, dodane reczne prunowanie
 ```
-rpc error: code = Unknown desc = Manifest generation error (cached): `kustomize build .cluster-config/acmtest.eskom.demo` failed exit status 1: Error: accumulating resources: accumulation err='accumulating resources from '../../manifests/oauth-htpasswd': '.manifests/oauth-htpasswd' must resolve to a file': recursed accumulation of path '.manifests/oauth-htpasswd': accumulating resources: accumulation err='accumulating resources from 'htpasswd-oauth.yaml': missing metadata.name in object {{config.openshift.io/v1 OAuth} {{ } map[] map[argocd.argoproj.io/sync-options:Prune=false]}}': got file 'htpasswd-oauth.yaml', but '.manifests/oauth-htpasswd/htpasswd-oauth.yaml' must be a directory to be a root
+rpc error: code = Unknown desc = Manifest generation error (cached): `kustomize build .cluster-config/infra.eskom.demo` failed exit status 1: Error: accumulating resources: accumulation err='accumulating resources from '../../manifests/oauth-htpasswd': '.manifests/oauth-htpasswd' must resolve to a file': recursed accumulation of path '.manifests/oauth-htpasswd': accumulating resources: accumulation err='accumulating resources from 'htpasswd-oauth.yaml': missing metadata.name in object {{config.openshift.io/v1 OAuth} {{ } map[] map[argocd.argoproj.io/sync-options:Prune=false]}}': got file 'htpasswd-oauth.yaml', but '.manifests/oauth-htpasswd/htpasswd-oauth.yaml' must be a directory to be a root
 ```

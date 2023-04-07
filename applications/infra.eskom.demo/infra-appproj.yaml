@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: acmtest
+  name: infra
 spec:
   clusterResourceWhitelist:
   - group: '*'
