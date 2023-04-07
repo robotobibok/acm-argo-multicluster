@@ -6,6 +6,6 @@ namespace: openshift-gitops
 resources:
 - infra-appproj.yaml
 - infra-config-app.yaml
+- infra-deploy-dev-app.yaml
 #- infra-deploy-dev-app.yaml # tu mozna tymczasowo wylaczac provisioning danego klastra
-#- infra-deploy-dev-app.yaml
 #- infra-deploy-test-app.yaml
