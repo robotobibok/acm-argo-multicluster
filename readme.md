@@ -1,5 +1,40 @@
 problem:  deploy + management wielu klastrow OCP w modelu gitops
-uzyte narzędzia: Red Hat Advcanced Cluster Management, ArgoCD (Red Hat Gitops), Sealed Secrets 
+uzyte narzędzia: Red Hat Advcanced Cluster Management, ArgoCD (Red Hat Gitops), Sealed Secrets  
+
+```bash
+acm-argo-multicluster
+├── applications              # definicje aplikacji Argo per klaster
+│   ├── acmtest.eskom.demo    
+│   └── dev.eskom.demo
+├── bootstrap                 # punkt startowy, argocd-apps wskazuje na powyzszy
+│   ├── argocd-apps
+│   ├── gitops-operator
+│   ├── namespaces
+│   └── sealed-secrets
+├── cluster-config            # agreguje konfiguracje z folderu manifests, tu wskazuje folder applications
+│   ├── acmtest.eskom.demo
+│   ├── dev.eskom.demo
+│   └── test.eskom.demo
+├── cluster-deploy            # agreguje informacje o deploymencie klastrow z folderu managed-clusters, tu wskazuje folder applications
+│   ├── dev.eskom.demo
+│   └── test.eskom.demo
+├── managed-clusters          # wszystko potrzebne do stworzenia klastrow z poziomu ACM
+│   ├── dev.eskom.demo
+│   │   └── secrets
+│   └── test.eskom.demo
+│       └── secrets
+└── manifests                 # zbiory konfiguracji klastrow
+    ├── gitops-operator
+    ├── namespaces
+    ├── oauth-htpasswd
+    ├── rbac
+    ├── registry
+    │   ├── base
+    │   └── overlays
+    │       └── rwo
+    └── sealed-deploy
+
+```
 
 
 deploy z bastiona, user ocp  
