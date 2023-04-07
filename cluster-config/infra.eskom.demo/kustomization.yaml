@@ -5,4 +5,4 @@ bases:
 - ../../manifests/namespaces
 - ../../manifests/oauth-htpasswd
 - ../../manifests/rbac
-#- ../../manifests/gitops-config
+- ../../manifests/gitops-config
