@@ -1,4 +1,4 @@
-problem:  deploy + management wielu klastrow OCP w modelu gitops
+problem:  deploy + management wielu klastrow OCP w modelu gitops  
 uzyte narzędzia: Red Hat Advcanced Cluster Management, ArgoCD (Red Hat Gitops), Sealed Secrets  
 
 ```bash
@@ -52,7 +52,7 @@ pozniej juz zmiany bezposrednio w repo, dodawanie aplikacji w ``applications/`` 
 uprawnienia admina dla Argo:
 ``oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops``
 
-sekrety musza byc wygenerowane ze wskazaniem odpowiedniego ns:
+sekrety musza byc wygenerowane ze wskazaniem odpowiedniego ns, na bastion sealed_secrets są wszystkie. W przypadku reinstall infra/zmiany klucza trzeba je przegenerować
 ``kubeseal --format yaml --controller-namespace sealed-secrets <htpasswd-secret.yaml > htpasswd-sealed.yaml``
 
 ---
