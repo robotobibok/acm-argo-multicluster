@@ -5,3 +5,4 @@ metadata:
 spec:
   clusters:
   - name: local-cluster
+  - name: dev
