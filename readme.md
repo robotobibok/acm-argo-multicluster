@@ -118,8 +118,18 @@ rozwalila sie konfiguracja klastra, dodane reczne prunowanie
 rpc error: code = Unknown desc = Manifest generation error (cached): `kustomize build .cluster-config/infra.eskom.demo` failed exit status 1: Error: accumulating resources: accumulation err='accumulating resources from '../../manifests/oauth-htpasswd': '.manifests/oauth-htpasswd' must resolve to a file': recursed accumulation of path '.manifests/oauth-htpasswd': accumulating resources: accumulation err='accumulating resources from 'htpasswd-oauth.yaml': missing metadata.name in object {{config.openshift.io/v1 OAuth} {{ } map[] map[argocd.argoproj.io/sync-options:Prune=false]}}': got file 'htpasswd-oauth.yaml', but '.manifests/oauth-htpasswd/htpasswd-oauth.yaml' must be a directory to be a root
 ```
 
-Platform credentials failed authentication check: POST https://vcenter.elab.local/rest/com/vmware/cis/session: 503 Service 
+Platform credentials failed authentication check: POST https://vcenter.elab.local/rest/com/vmware/cis/session: 503 Service  
+https://blogs.vmware.com/performance/2022/07/endpoint-limits-for-concurrent-rest-requests-from-vcenter-apis.html
 ```
 /var/log/vmware/vapi/endpoint
 2023-04-07T22:03:05.565Z | WARN  | sso3                      | BaseSessionImpl                | User sessions count is limited to 550. Existing sessions are 550 for user ocp@VSPHERE.LOCAL. Please retry the login operation
+
+zmiana uzytkownika nic nie dala  
+2023-04-08T09:54:20.910Z | WARN  | sso8                      | BaseSessionImpl                | User sessions count is limited to 550. Existing sessions are 550 for user ocpdev@VSPHERE.LOCAL. Please retry the login operation
+
+nie znalazlem jak to zmienic lepiej:
+vi /etc/vmware-vapi/endpoint.properties
+  session.maxSessionCount=2000 # bylo 1000
+  session.maxSessionsPerUser=1550 # bylo 550
+service-control --restart vmware-vapi-endpoint
 ```
