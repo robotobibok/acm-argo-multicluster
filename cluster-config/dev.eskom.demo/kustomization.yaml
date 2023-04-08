@@ -3,4 +3,4 @@ kind: Kustomization
 
 bases:
 #- ../../manifests/namespaces
-- ../../manifests/oauth-htpasswd
+- ../../manifests/oauth-htpasswd/overlays/dev
