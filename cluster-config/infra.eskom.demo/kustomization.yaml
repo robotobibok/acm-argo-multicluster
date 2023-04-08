@@ -3,6 +3,6 @@ kind: Kustomization
 
 bases:
 - ../../manifests/namespaces
-- ../../manifests/oauth-htpasswd
+- ../../manifests/oauth-htpasswd/overlays/infra
 - ../../manifests/rbac
 - ../../manifests/gitops-config

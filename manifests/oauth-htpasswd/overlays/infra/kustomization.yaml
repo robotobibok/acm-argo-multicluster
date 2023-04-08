@@ -3,4 +3,6 @@ kind: Kustomization
 
 resources:
 - htpasswd-secret.yaml
-- htpasswd-oauth.yaml
+
+bases:
+- ../../base
