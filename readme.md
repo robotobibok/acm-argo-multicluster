@@ -117,3 +117,9 @@ rozwalila sie konfiguracja klastra, dodane reczne prunowanie
 ```
 rpc error: code = Unknown desc = Manifest generation error (cached): `kustomize build .cluster-config/infra.eskom.demo` failed exit status 1: Error: accumulating resources: accumulation err='accumulating resources from '../../manifests/oauth-htpasswd': '.manifests/oauth-htpasswd' must resolve to a file': recursed accumulation of path '.manifests/oauth-htpasswd': accumulating resources: accumulation err='accumulating resources from 'htpasswd-oauth.yaml': missing metadata.name in object {{config.openshift.io/v1 OAuth} {{ } map[] map[argocd.argoproj.io/sync-options:Prune=false]}}': got file 'htpasswd-oauth.yaml', but '.manifests/oauth-htpasswd/htpasswd-oauth.yaml' must be a directory to be a root
 ```
+
+Platform credentials failed authentication check: POST https://vcenter.elab.local/rest/com/vmware/cis/session: 503 Service 
+```
+/var/log/vmware/vapi/endpoint
+2023-04-07T22:03:05.565Z | WARN  | sso3                      | BaseSessionImpl                | User sessions count is limited to 550. Existing sessions are 550 for user ocp@VSPHERE.LOCAL. Please retry the login operation
+```
