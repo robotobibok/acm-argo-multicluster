@@ -6,3 +6,5 @@ spec:
   clusters:
   - name: local-cluster
   - name: dev
+  - name: test
+  - name: prod
