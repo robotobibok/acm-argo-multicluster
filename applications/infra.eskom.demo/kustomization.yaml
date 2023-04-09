@@ -9,3 +9,4 @@ resources:
 - infra-deploy-dev-app.yaml
 #- infra-deploy-dev-app.yaml # tu mozna tymczasowo wylaczac provisioning danego klastra
 - infra-deploy-test-app.yaml
+- infra-deploy-prod-app.yaml
