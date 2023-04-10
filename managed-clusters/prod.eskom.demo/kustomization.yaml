@@ -7,7 +7,7 @@ resources:
 - prod-managedcluster.yaml
 - prod-managedclusterinfo.yaml
 #- prod-machinepool-worker.yaml #niepotrzebna, mozna sterowac iloscia workerow z install-config
-- prod-machinepool-infra.yaml
+#- prod-machinepool-infra.yaml #na poziomie hive, nie ma mozliwosci zmienienia datastore, wiec robimy pozniej z argo
 - prod-klusterletaddonconfig.yaml
 - secrets/prod-vsphere-certs.yaml
 - secrets/prod-vsphere-creds.yaml
