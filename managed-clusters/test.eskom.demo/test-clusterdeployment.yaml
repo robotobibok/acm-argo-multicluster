@@ -23,7 +23,7 @@ spec:
         name: test-vsphere-creds
       vCenter: vcenter.elab.local
       datacenter: Datacenter
-      defaultDatastore: ceph_hdd
+      defaultDatastore: ceph_ssd
       network: vlan141
   provisioning:
     installConfigSecretRef:
