@@ -57,10 +57,9 @@ oc apply -k bootstrap/argocd-apps
 
 - po uruchomieniu wszyskiego na klastrze infra, acm nanosi sealed-secret na klastry, ktore uruchomi sie za pomoca konfiguracji z manifests/gitops-config (aplikacja w acm) - gitops cluster etc  
 
-- majac zainstalowane sealed secrets, trzeba wygenerowac w overlay dla kazdego klastra manifests/oauth-htpasswd/overlays/dev/htpasswd-secret.yaml, zeby kontroler sealed mogl je odpalic  
+- po instalacji sealed secrets na zarzadzanym klastrze, trzeba wygenerowac w overlay dla kazdego klastra ``manifests/oauth-htpasswd/overlays/dev/htpasswd-secret.yaml``, zeby kontroler sealed mogl je odpalic  
 
-- zalozenie jest takie, ze mastery sa na datastore ssd, workery i infry na hdd, inaczej sa problemy z dzialaniem etcd. dlatego nie powolujemy machineset z acm, tylko powolujemy maly klaster na ssd, pozniej argo dodajemy machinesety dla worker/infra na ssd. klaster dev caly jest na hdd
-
+- zalozenie jest takie, ze mastery sa na datastore ssd, workery i infry na hdd, inaczej sa problemy z dzialaniem etcd. dlatego nie powolujemy machineset z acm, tylko powolujemy maly klaster na ssd, pozniej argo dodajemy machinesety dla worker/infra na ssd. klaster dev caly jest na hdd. Dlatego po instalacji trzeba ustawic aktualny cluster-id w ``manifests/machine-set/test.eskom.demo``
 ---
 architektura managed clusters  
 infra: 3xmaster, 5xworker
