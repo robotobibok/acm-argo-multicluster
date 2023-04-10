@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-config
+spec:
+  destination:
+    name: prod
+  project: prod
+  source:
+    path: cluster-config/prod.eskom.demo
+    repoURL: https://github.com/robotobibok/acm-argo-multicluster
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false #nie kasujemy automatycznie
+      selfHeal: true

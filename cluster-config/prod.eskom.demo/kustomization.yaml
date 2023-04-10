@@ -3,7 +3,7 @@ kind: Kustomization
 
 bases:
 #- ../../manifests/namespaces
-- ../../manifests/oauth-htpasswd/overlays/test
+- ../../manifests/oauth-htpasswd/overlays/prod
 - ../../manifests/rbac
-#- ../../manifests/machine-set/test.eskom.demo
+- ../../manifests/machine-set/prod.eskom.demo
 
