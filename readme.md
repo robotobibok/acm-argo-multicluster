@@ -37,7 +37,7 @@ acm-argo-multicluster
 ```
 
 
-deploy z bastiona, user ocp  
+- deploy z bastiona, user ocp  
 ``export KUBECONFIG=/home/ocp/infra.eskom.demo/auth/kubeconfig``
 
 start z pierwszego klastra (infra), wymaga zainstalowanego ACM:
@@ -47,13 +47,19 @@ oc apply -k bootstrap/gitops-operator
 oc apply -k bootstrap/sealed-secrets
 oc apply -k bootstrap/argocd-apps 
 ```
-pozniej juz zmiany bezposrednio w repo, dodawanie aplikacji w ``applications/`` po czym odswiezenie definicji aplikacji w ACM, ktory nanosi juz wszystko na Argo, ktore powoluje klastry z ACM
+- pozniej juz zmiany bezposrednio w repo, dodawanie aplikacji w ``applications/`` po czym odswiezenie definicji aplikacji w ACM, ktory nanosi juz wszystko na Argo, ktore powoluje klastry z ACM
 
-uprawnienia admina dla Argo:
+- uprawnienia admina dla Argo:
 ``oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops``
 
-sekrety musza byc wygenerowane ze wskazaniem odpowiedniego ns, na bastion sealed_secrets są wszystkie. W przypadku reinstall infra/zmiany klucza trzeba je przegenerować
-``kubeseal --format yaml --controller-namespace sealed-secrets <htpasswd-secret.yaml > htpasswd-sealed.yaml``
+- sekrety musza byc wygenerowane ze wskazaniem odpowiedniego ns, na bastion sealed_secrets są wszystkie. W przypadku reinstall infra/zmiany klucza trzeba je przegenerować
+``kubeseal --format yaml --controller-namespace sealed-secrets <htpasswd-secret.yaml > htpasswd-sealed.yaml``  
+
+- po uruchomieniu wszyskiego na klastrze infra, acm nanosi sealed-secret na klastry, ktore uruchomi sie za pomoca konfiguracji z manifests/gitops-config (aplikacja w acm) - gitops cluster etc  
+
+- majac zainstalowane sealed secrets, trzeba wygenerowac w overlay dla kazdego klastra manifests/oauth-htpasswd/overlays/dev/htpasswd-secret.yaml, zeby kontroler sealed mogl je odpalic  
+
+- zalozenie jest takie, ze mastery sa na datastore ssd, workery i infry na hdd, inaczej sa problemy z dzialaniem etcd. dlatego nie powolujemy machineset z acm, tylko powolujemy maly klaster na ssd, pozniej argo dodajemy machinesety dla worker/infra na ssd. klaster dev caly jest na hdd
 
 ---
 architektura managed clusters  

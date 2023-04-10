@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-config
+spec:
+  destination:
+    name: test
+  project: test
+  source:
+    path: cluster-config/test.eskom.demo
+    repoURL: https://github.com/robotobibok/acm-argo-multicluster
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false #nie kasujemy automatycznie
+      selfHeal: true

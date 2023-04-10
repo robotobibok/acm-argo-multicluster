@@ -1,0 +1,48 @@
+apiVersion: machine.openshift.io/v1beta1
+kind: MachineSet
+metadata:
+  name: test-bfd8j-worker
+  namespace: openshift-machine-api
+  labels:
+    machine.openshift.io/cluster-api-cluster: test-bfd8j
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      machine.openshift.io/cluster-api-cluster: test-bfd8j
+      machine.openshift.io/cluster-api-machineset: test-bfd8j-worker
+  template:
+    metadata:
+      labels:
+        machine.openshift.io/cluster-api-cluster: test-bfd8j
+        machine.openshift.io/cluster-api-machine-role: worker
+        machine.openshift.io/cluster-api-machine-type: worker
+        machine.openshift.io/cluster-api-machineset: test-bfd8j-worker
+    spec:
+      lifecycleHooks: {}
+      metadata: {}
+      providerSpec:
+        value:
+          numCoresPerSocket: 2
+          diskGiB: 120
+          snapshot: ''
+          userDataSecret:
+            name: worker-user-data
+          memoryMiB: 16384
+          credentialsSecret:
+            name: vsphere-cloud-credentials
+          network:
+            devices:
+              - networkName: vlan141
+          metadata:
+            creationTimestamp: null
+          numCPUs: 4
+          kind: VSphereMachineProviderSpec
+          workspace:
+            datacenter: Datacenter
+            datastore: ceph_hdd
+            folder: /Datacenter/vm/test-bfd8j
+            resourcePool: /Datacenter/host/Synergy/Resources
+            server: vcenter.elab.local
+          template: test-bfd8j-rhcos
+          apiVersion: machine.openshift.io/v1beta1
