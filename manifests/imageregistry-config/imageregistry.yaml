@@ -12,14 +12,13 @@ spec:
     write:
       maxWaitInQueue: 0s
   observedConfig: null
-  managementState: Removed #na razie sam operator na infra
+  managementState: Removed #na razie sam operator na infra, pozniej zmienic na Managed
   proxy: {}
   unsupportedConfigOverrides: null
   storage: {}
   replicas: 1
   nodeSelector:
-    matchLabels:
-      node-role.kubernetes.io/infra: ""
+    node-role.kubernetes.io/infra: ""
   tolerations:
   - effect: NoSchedule
     key: node-role.kubernetes.io/infra
