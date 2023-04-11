@@ -8,3 +8,4 @@ bases:
 - ../../manifests/machine-set/test.eskom.demo
 - ../../manifests/ingress-config
 - ../../manifests/imageregistry-config
+- ../../manifests/monitoring-config
