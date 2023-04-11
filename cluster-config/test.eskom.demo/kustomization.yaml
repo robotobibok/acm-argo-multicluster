@@ -6,4 +6,5 @@ bases:
 - ../../manifests/oauth-htpasswd/overlays/test
 - ../../manifests/rbac
 - ../../manifests/machine-set/test.eskom.demo
+- ../../manifests/ingress-config
 
