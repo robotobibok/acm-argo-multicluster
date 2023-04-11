@@ -52,4 +52,4 @@ spec:
             datastore: ceph_hdd
             folder: /Datacenter/vm/test-tfcc7 # CHANGEME np /Datacenter/vm/dev-hcq6z
             resourcePool: /Datacenter/host/Synergy/Resources # CHANGEME np/Datacenter/host/Synergy/Resources
-            server: vcenter.eskom.demo
+            server: vcenter.elab.local
