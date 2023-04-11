@@ -7,4 +7,3 @@ bases:
 - ../../manifests/rbac
 - ../../manifests/machine-set/test.eskom.demo
 - ../../manifests/ingress-config
-
