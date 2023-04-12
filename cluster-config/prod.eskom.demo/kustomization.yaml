@@ -4,6 +4,6 @@ kind: Kustomization
 bases:
 #- ../../manifests/namespaces
 - ../../manifests/oauth-htpasswd/overlays/prod
-- ../../manifests/rbac
+- ../../manifests/rbac/base
 - ../../manifests/machine-set/prod.eskom.demo
 
