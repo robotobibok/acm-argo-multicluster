@@ -4,7 +4,7 @@ kind: Kustomization
 bases:
 #- ../../manifests/namespaces
 - ../../manifests/oauth-htpasswd/overlays/test
-- ../../manifests/rbac
+- ../../manifests/rbac/base
 - ../../manifests/machine-set/test.eskom.demo
 - ../../manifests/ingress-config
 - ../../manifests/imageregistry-config

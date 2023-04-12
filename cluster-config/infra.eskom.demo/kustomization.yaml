@@ -4,5 +4,5 @@ kind: Kustomization
 bases:
 - ../../manifests/namespaces
 - ../../manifests/oauth-htpasswd/overlays/infra
-- ../../manifests/rbac
+- ../../manifests/rbac/overlays/infra
 - ../../manifests/gitops-config
