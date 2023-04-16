@@ -1,0 +1,36 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: acmtest
+  namespace: acmtest
+  labels:
+    env: dev
+    cloud: vSphere
+    vendor: OpenShift
+    cluster.open-cluster-management.io/clusterset: managed-clusters
+spec:
+  baseDomain: eskom.demo
+  clusterName: acmtest
+  controlPlaneConfig:
+    servingCertificates: {}
+  installAttemptsLimit: 1
+  platform:
+    vsphere:
+      cluster: Synergy
+      certificatesSecretRef:
+        name: acmtest-vsphere-certs
+      credentialsSecretRef:
+        name: acmtest-vsphere-creds
+      vCenter: vcenter.elab.local
+      datacenter: Datacenter
+      defaultDatastore: ceph_ssd
+      network: vlan141
+  provisioning:
+    installConfigSecretRef:
+      name: acmtest-install-config
+    sshPrivateKeySecretRef:
+      name: acmtest-ssh-private-key
+    imageSetRef:
+      name: img4.12.9-multi-appsub
+  pullSecretRef:
+    name: acmtest-pull-secret

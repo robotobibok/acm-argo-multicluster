@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - acmtest-ns.yaml
+  - acmtest-clusterdeployment.yaml
+  - acmtest-managedcluster.yaml
+  - acmtest-managedclusterinfo.yaml
+  - acmtest-klusterletaddonconfig.yaml
+  - secrets/acmtest-vsphere-certs.yaml
+  - secrets/acmtest-vsphere-creds.yaml
+  - secrets/acmtest-install-config.yaml
+  - secrets/acmtest-pull-secret.yaml
+  - secrets/acmtest-ssh-private-key.yaml

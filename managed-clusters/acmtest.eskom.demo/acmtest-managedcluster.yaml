@@ -1,0 +1,13 @@
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  name: acmtest
+  namespace: acmtest
+  labels:
+    cloud: vSphere
+    name: acmtest
+    env: dev
+    vendor: OpenShift
+    cluster.open-cluster-management.io/clusterset: managed-clusters
+spec:
+  hubAcceptsClient: true
