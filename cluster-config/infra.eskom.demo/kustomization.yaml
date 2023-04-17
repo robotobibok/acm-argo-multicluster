@@ -7,3 +7,4 @@ bases:
 - ../../manifests/rbac/overlays/infra
 - ../../manifests/gitops-config
 - ../../manifests/acm-policy-sso
+- ../../manifests/acm-policy-webterminal
