@@ -3,4 +3,5 @@ kind: Kustomization
 
 resources:
 - rhsso-policies.yaml
+- openshift-terminal.yaml
 - acm-vmware-creds-ns.yaml

@@ -35,9 +35,9 @@ spec:
                   installPlanApproval: Automatic
                   source: redhat-operators
                   sourceNamespace: openshift-marketplace
-          remediationAction: inform
+          remediationAction: enforce
           severity: medium
-  remediationAction: inform
+  remediationAction: enforce
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
