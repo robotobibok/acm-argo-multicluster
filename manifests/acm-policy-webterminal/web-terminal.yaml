@@ -2,6 +2,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
   name: policy-web-terminal-operator
+  namespace: webterminal-policy
   annotations:
     policy.open-cluster-management.io/categories: CM Configuration Management
     policy.open-cluster-management.io/controls: CM-2 Baseline Configuration
@@ -43,6 +44,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: policy-web-terminal-operator-placement
+  namespace: webterminal-policy
 spec:
   clusterConditions:
     - status: "True"
@@ -58,6 +60,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: policy-web-terminal-operator-placement
+  namespace: webterminal-policy
 placementRef:
   name: policy-web-terminal-operator-placement
   apiGroup: apps.open-cluster-management.io
