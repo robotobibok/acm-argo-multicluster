@@ -6,3 +6,4 @@ bases:
 - ../../manifests/oauth-htpasswd/overlays/infra
 - ../../manifests/rbac/overlays/infra
 - ../../manifests/gitops-config
+- ../../manifests/acm-policy-sso
