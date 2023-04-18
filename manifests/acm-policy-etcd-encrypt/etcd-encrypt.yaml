@@ -1,3 +1,5 @@
+# It is applied to managed-clusters with label etcdencrypt=true
+
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
@@ -8,7 +10,7 @@ metadata:
     policy.open-cluster-management.io/categories: SC System and Communications Protection
     policy.open-cluster-management.io/controls: SC-28 Protection Of Information At Rest
 spec:
-  remediationAction: inform
+  remediationAction: enforce
   disabled: false
   policy-templates:
     - objectDefinition:
@@ -18,7 +20,7 @@ spec:
           name: enable-etcd-encryption
           namespace: policy-etcd-encryption
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: low
           object-templates:
             - complianceType: musthave
@@ -37,7 +39,7 @@ spec:
           name: enable-etcd-encryption-status-kubeapi
           namespace: policy-etcd-encryption
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: low
           object-templates:
             - complianceType: musthave
@@ -76,7 +78,7 @@ spec:
     type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-      - key: vendor
-        operator: In
-        values:
-          - "OpenShift"
+    - key: etcdencrypt
+      operator: In
+      values:
+      - "true"
