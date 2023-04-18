@@ -19,14 +19,14 @@ metadata:
   labels:
     app: rhsso
   name: configure-mc-rhsso-spokeresources
-  namespace: rhsso-policies
+  namespace: rhsso
 spec:
-  dependencies:
-    - apiVersion: policy.open-cluster-management.io/v1
-      kind: Policy
-      name: configure-mc-rhsso-hubresources
-      namespace: rhsso-policies
-      compliance: Compliant
+#  dependencies:
+#    - apiVersion: policy.open-cluster-management.io/v1
+#      kind: Policy
+#      name: configure-mc-rhsso-hubresources
+#      namespace: rhsso-policies
+#      compliance: Compliant
   disabled: false
   policy-templates:
   - objectDefinition:
@@ -95,7 +95,7 @@ metadata:
   labels:
     app: sso
   name: placement-configure-mc-rhsso-spokeresources
-  namespace: rhsso-policies
+  namespace: rhsso
 spec:
   clusterConditions:
   - status: "True"
@@ -113,7 +113,7 @@ metadata:
   labels:
     app: sso
   name: binding-configure-mc-rhsso-spokeresources
-  namespace: rhsso-policies
+  namespace: rhsso
 placementRef:
   apiGroup: apps.open-cluster-management.io
   kind: PlacementRule
