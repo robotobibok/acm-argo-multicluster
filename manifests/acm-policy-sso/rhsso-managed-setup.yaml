@@ -97,6 +97,9 @@ metadata:
   name: placement-configure-mc-rhsso-spokeresources
   namespace: rhsso
 spec:
+  clusterConditions:
+  - status: "True"
+    type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
     - key: rhsso
