@@ -55,6 +55,7 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-policy-etcdencryption
+  namespace: policy-etcd-encryption
 placementRef:
   name: placement-policy-etcdencryption
   kind: PlacementRule
@@ -68,6 +69,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement-policy-etcdencryption
+  namespace: policy-etcd-encryption
 spec:
   clusterConditions:
   - status: "True"
