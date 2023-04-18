@@ -21,13 +21,14 @@ metadata:
   name: configure-mc-rhsso-spokeresources
   namespace: rhsso
 spec:
-  dependencies: # wywalone dependency, poniewaz na managed cluster nie bylo tej polityki i deploy stal, jest tylko na hubie
-    - apiVersion: policy.open-cluster-management.io/v1
-      kind: Policy
-      name: configure-mc-rhsso-hubresources
-      namespace: rhsso-policies
-      compliance: Compliant
-# bez tej zaleznosci z kolei, podbija co kilka sekund wersje oauth: OAuthServerDeploymentProgressing: deployment/oauth-openshift.openshift-authentication: observed generation is 255, desired generation is 256.
+#  dependencies: # wywalone dependency, poniewaz na managed cluster nie bylo tej polityki i deploy stal, jest tylko na hubie
+#    - apiVersion: policy.open-cluster-management.io/v1
+#      kind: Policy
+#      name: configure-mc-rhsso-hubresources
+#      namespace: rhsso-policies
+#      compliance: Compliant
+# argo zmienia i podbija co kilka sekund wersje oauth: OAuthServerDeploymentProgressing: deployment/oauth-openshift.openshift-authentication: observed generation is 255, desired generation is 256.
+# 
   disabled: false
   policy-templates:
   - objectDefinition:
