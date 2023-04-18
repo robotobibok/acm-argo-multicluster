@@ -18,7 +18,6 @@ spec:
         kind: ConfigurationPolicy
         metadata:
           name: enable-etcd-encryption
-          namespace: policy-etcd-encryption
         spec:
           remediationAction: enforce
           severity: low
@@ -37,7 +36,6 @@ spec:
         kind: ConfigurationPolicy
         metadata:
           name: enable-etcd-encryption-status-kubeapi
-          namespace: policy-etcd-encryption
         spec:
           remediationAction: enforce
           severity: low
@@ -57,7 +55,6 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
   name: binding-policy-etcdencryption
-  namespace: policy-etcd-encryption
 placementRef:
   name: placement-policy-etcdencryption
   kind: PlacementRule
@@ -71,7 +68,6 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement-policy-etcdencryption
-  namespace: policy-etcd-encryption
 spec:
   clusterConditions:
   - status: "True"
