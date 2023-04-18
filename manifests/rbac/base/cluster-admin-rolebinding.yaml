@@ -10,3 +10,6 @@ subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: User
   name: admin
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: 05b7e2c2-c53d-4ca8-98be-053f01a1fc86
