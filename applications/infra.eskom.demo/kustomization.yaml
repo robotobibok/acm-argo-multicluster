@@ -9,4 +9,3 @@ resources:
 #- infra-deploy-dev-app.yaml
 - infra-deploy-test-app.yaml
 #- infra-deploy-prod-app.yaml
-- infra-deploy-acmtest-app.yaml

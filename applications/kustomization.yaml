@@ -6,4 +6,3 @@ bases:
   #- dev.eskom.demo
   - test.eskom.demo
   #- prod.eskom.demo
-  - acmtest.eskom.demo
