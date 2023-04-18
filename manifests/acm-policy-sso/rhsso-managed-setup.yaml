@@ -19,7 +19,7 @@ metadata:
   labels:
     app: rhsso
   name: configure-mc-rhsso-spokeresources
-  namespace: rhsso
+  namespace: rhsso-policies
 spec:
   dependencies:
     - apiVersion: policy.open-cluster-management.io/v1
@@ -95,7 +95,7 @@ metadata:
   labels:
     app: sso
   name: placement-configure-mc-rhsso-spokeresources
-  namespace: rhsso
+  namespace: rhsso-policies
 spec:
   clusterConditions:
   - status: "True"
@@ -113,7 +113,7 @@ metadata:
   labels:
     app: sso
   name: binding-configure-mc-rhsso-spokeresources
-  namespace: rhsso
+  namespace: rhsso-policies
 placementRef:
   apiGroup: apps.open-cluster-management.io
   kind: PlacementRule
