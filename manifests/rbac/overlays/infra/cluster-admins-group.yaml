@@ -2,6 +2,8 @@ apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
   name: cluster-admins
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
 users:
 - admin
 - 05b7e2c2-c53d-4ca8-98be-053f01a1fc86
