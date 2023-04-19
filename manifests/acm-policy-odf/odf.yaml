@@ -51,27 +51,6 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-odf-operator-catalog-source
-        spec:
-          object-templates:
-            - complianceType: musthave
-              objectDefinition:
-                apiVersion: operators.coreos.com/v1alpha1
-                kind: CatalogSource
-                metadata:
-                  name: odf-catalogsource
-                  namespace: openshift-marketplace
-                spec:
-                  displayName: OpenShift Data Foundation
-                  image: quay.io/ocs-dev/odf-operator-catalog:main
-                  publisher: Red Hat
-                  sourceType: grpc
-          remediationAction: inform
-          severity: high
-    - objectDefinition:
-        apiVersion: policy.open-cluster-management.io/v1
-        kind: ConfigurationPolicy
-        metadata:
           name: policy-odf-operator-subscription
         spec:
           object-templates:
@@ -83,12 +62,11 @@ spec:
                   name: odf-operator
                   namespace: openshift-storage
                 spec:
-                  channel: alpha
+                  channel: stable-4.12
                   installPlanApproval: Automatic
                   name: odf-operator
-                  source: odf-catalogsource
+                  source: redhat-operators
                   sourceNamespace: openshift-marketplace
-                  startingCSV: odf-operator.v0.0.1
           remediationAction: inform
           severity: high
     - objectDefinition:
