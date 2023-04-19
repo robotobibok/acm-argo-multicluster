@@ -9,4 +9,4 @@ bases:
 - ../../manifests/acm-policy-sso
 #- ../../manifests/acm-policy-webterminal # failed to sync cluster https://172.30.0.1:443: failed to load initial state of resource DevWorkspace.workspace.devfile.io: Internal error occurred: error resolving resource
 - ../../manifests/acm-policy-etcd-encrypt
-- ../../manifests/acm-policy-odf
+#- ../../manifests/acm-policy-odf # nie mozna uruchomic storagesystem, moze za wysoka wersja vmware
