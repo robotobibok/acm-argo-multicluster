@@ -25,7 +25,7 @@ spec:
                 apiVersion: v1
                 kind: Namespace
                 metadata:
-                  name: openshift-storag
+                  name: openshift-storage
                   annotations:
                     openshift.io/node-selector: ""
           remediationAction: inform
@@ -69,6 +69,7 @@ spec:
                   name: odf-operator
                   source: redhat-operators
                   sourceNamespace: openshift-marketplace
+                  startingCSV: odf-operator.v4.12.2-rhodf
           remediationAction: inform
           severity: high
     - objectDefinition:
