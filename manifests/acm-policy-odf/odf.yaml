@@ -118,9 +118,9 @@ spec:
                           resources:
                             requests:
                               storage: 512Gi
-                          storageClassName: gp2
+                          storageClassName: odf-thin-csi
                           volumeMode: Block
-                      name: ocs-deviceset-gp2
+                      name: ocs-deviceset-odf-thin-csi
                       portable: true
                       replica: 3
           remediationAction: inform
