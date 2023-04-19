@@ -25,7 +25,9 @@ spec:
                 apiVersion: v1
                 kind: Namespace
                 metadata:
-                  name: openshift-storage
+                  name: openshift-storag
+                  annotations:
+                    openshift.io/node-selector: ""
           remediationAction: inform
           severity: high
     - objectDefinition:
