@@ -148,11 +148,11 @@ metadata:
   namespace: policy-odf
 spec:
   clusterConditions:
-    - status: 'True'
-      type: ManagedClusterConditionAvailable
+  - status: "True"
+    type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-    - key: local-cluster
+    - key: odf
       operator: In
       values:
       - "true"
