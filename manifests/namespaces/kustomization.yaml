@@ -6,3 +6,4 @@ resources:
 - openshift-terminal.yaml
 - acm-vmware-creds-ns.yaml
 - policy-etcd-encryption.yaml
+- policy-odf.yaml
