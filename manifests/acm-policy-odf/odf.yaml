@@ -2,7 +2,6 @@
 # the OpenShift Data Foundation on the managed clusters.
 #
 # If set to "enforce" it'll install the operator.
----
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
@@ -148,8 +147,6 @@ spec:
          remediationAction: inform
          severity: low
  remediationAction: enforce
- 
- 
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
