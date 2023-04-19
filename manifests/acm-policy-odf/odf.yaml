@@ -140,9 +140,9 @@ spec:
                          resources:
                            requests:
                              storage: 512Gi
-                         storageClassName: thin-csi
+                         storageClassName: odf-thin-csi
                          volumeMode: Block
-                     name: ocs-deviceset-thin-csi
+                     name: ocs-deviceset-odf-thin-csi
                      portable: true
                      replica: 3
          remediationAction: inform
