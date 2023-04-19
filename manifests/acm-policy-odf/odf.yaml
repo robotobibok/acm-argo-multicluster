@@ -9,6 +9,7 @@ metadata:
     policy.open-cluster-management.io/controls: CM-2 Baseline Configuration
     policy.open-cluster-management.io/standards: NIST SP 800-53
   name: policy-odf-operator
+  namespace: policy-odf
 spec:
   disabled: false
   policy-templates:
@@ -164,6 +165,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement-policy-odf-operator
+  namespace: policy-odf
 spec:
   clusterConditions:
     - status: 'True'
