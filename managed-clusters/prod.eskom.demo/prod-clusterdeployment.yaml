@@ -8,6 +8,7 @@ metadata:
     cloud: vSphere
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: managed-clusters
+    rhsso: true
 spec:
   baseDomain: eskom.demo
   clusterName: prod
