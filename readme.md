@@ -138,3 +138,4 @@ vi /etc/vmware-vapi/endpoint.properties
   session.maxSessionsPerUser=1550 # bylo 550
 service-control --restart vmware-vapi-endpoint
 ```
+t
