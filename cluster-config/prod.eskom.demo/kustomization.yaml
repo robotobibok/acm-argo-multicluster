@@ -5,7 +5,7 @@ bases:
 #- ../../manifests/namespaces
 - ../../manifests/oauth-htpasswd/overlays/prod
 - ../../manifests/rbac/base
-#- ../../manifests/machine-set/prod.eskom.demo
+- ../../manifests/machine-set/prod.eskom.demo
 #- ../../manifests/ingress-config
 #- ../../manifests/imageregistry-config
 #- ../../manifests/monitoring-config
