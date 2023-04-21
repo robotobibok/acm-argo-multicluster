@@ -18,12 +18,12 @@ metadata:
   name: setup-rhsso-for-acm
   namespace: rhsso-policies
 spec:
-  dependencies:
-    - apiVersion: policy.open-cluster-management.io/v1
-      kind: Policy
-      name: install-rhsso-operator
-      namespace: local-cluster # powinien w rhsso-policies, ale laduje w ns local-cluster
-      compliance: Compliant
+#  dependencies: # po kilku dniach dzialania zaczal krzyczec, ze nie ma spelnionej tej zaleznosci, mimo, ze byla
+#    - apiVersion: policy.open-cluster-management.io/v1
+#      kind: Policy
+#      name: install-rhsso-operator
+#      namespace: rhsso-policies # local-cluster powinien w rhsso-policies, ale laduje w ns local-cluster
+#      compliance: Compliant
   disabled: false
   policy-templates:
   - objectDefinition:

@@ -25,12 +25,12 @@ metadata:
   name: configure-mc-rhsso-hubresources
   namespace: rhsso-policies
 spec:
-  dependencies:
-    - apiVersion: policy.open-cluster-management.io/v1
-      kind: Policy
-      name: setup-rhsso-for-acm
-      namespace: local-cluster #z jakiegos powodu nie laduja w rhsso-policies
-      compliance: Compliant
+#  dependencies: # po kilku dniach dzialania zaczal krzyczec, ze nie ma spelnionej tej zaleznosci, mimo, ze byla
+#    - apiVersion: policy.open-cluster-management.io/v1
+#      kind: Policy
+#      name: setup-rhsso-for-acm
+#      namespace: local-cluster #z jakiegos powodu nie laduja w rhsso-policies
+#      compliance: Compliant
   disabled: false
   policy-templates:
   - objectDefinition:
