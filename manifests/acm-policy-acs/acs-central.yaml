@@ -19,7 +19,7 @@ spec:
       metadata:
         name: advanced-cluster-security-namespace
       spec:
-        remediationAction: inform
+        remediationAction: enforce
         severity: high
         object-templates:
           - complianceType: musthave
@@ -48,7 +48,7 @@ spec:
       metadata:
         name: advanced-cluster-security-operator-subscription
       spec:
-        remediationAction: inform
+        remediationAction: enforce
         severity: high
         object-templates:
           - complianceType: musthave
@@ -70,7 +70,7 @@ spec:
       metadata:
         name: advanced-cluster-security-central
       spec:
-        remediationAction: inform
+        remediationAction: enforce
         severity: high
         object-templates:
           - complianceType: musthave
