@@ -7,3 +7,4 @@ resources:
 - acm-vmware-creds-ns.yaml
 - policy-etcd-encryption.yaml
 - policy-odf.yaml
+- policy-acs.yaml
