@@ -22,7 +22,7 @@ spec:
     - apiVersion: policy.open-cluster-management.io/v1
       kind: Policy
       name: install-rhsso-operator
-      namespace: rhsso-policies
+      namespace: local-cluster # powinien w rhsso-policies, ale laduje w ns local-cluster
       compliance: Compliant
   disabled: false
   policy-templates:

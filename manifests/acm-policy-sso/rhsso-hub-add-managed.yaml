@@ -29,7 +29,7 @@ spec:
     - apiVersion: policy.open-cluster-management.io/v1
       kind: Policy
       name: setup-rhsso-for-acm
-      namespace: rhsso-policies
+      namespace: local-cluster #z jakiegos powodu nie laduja w rhsso-policies
       compliance: Compliant
   disabled: false
   policy-templates:
