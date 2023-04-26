@@ -19,13 +19,13 @@ data:
       - key: node-role.kubernetes.io/infra
         value: reserved
         effect: NoSchedule
-    prometheusOperator:
-      nodeSelector:
-        node-role.kubernetes.io/infra: ""
-      tolerations:
-      - key: node-role.kubernetes.io/infra
-        value: reserved
-        effect: NoSchedule
+#    prometheusOperator: https://access.redhat.com/solutions/6992567
+#      nodeSelector:
+#        node-role.kubernetes.io/infra: ""
+#      tolerations:
+#      - key: node-role.kubernetes.io/infra
+#        value: reserved
+#        effect: NoSchedule
     k8sPrometheusAdapter:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
