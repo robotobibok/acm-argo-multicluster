@@ -10,54 +10,46 @@ data:
         node-role.kubernetes.io/infra: ""
       tolerations:
       - key: node-role.kubernetes.io/infra
-        value: reserved
         effect: NoSchedule
     prometheusK8s:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
       tolerations:
       - key: node-role.kubernetes.io/infra
-        value: reserved
         effect: NoSchedule
     k8sPrometheusAdapter:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
       tolerations:
       - key: node-role.kubernetes.io/infra
-        value: reserved
         effect: NoSchedule
     kubeStateMetrics:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
       tolerations:
       - key: node-role.kubernetes.io/infra
-        value: reserved
         effect: NoSchedule
     telemeterClient:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
       tolerations:
       - key: node-role.kubernetes.io/infra
-        value: reserved
         effect: NoSchedule
     openshiftStateMetrics:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
       tolerations:
       - key: node-role.kubernetes.io/infra
-        value: reserved
         effect: NoSchedule
     thanosQuerier:
       nodeSelector:
         node-role.kubernetes.io/infra: ""
       tolerations:
       - key: node-role.kubernetes.io/infra
-        value: reserved
         effect: NoSchedule
-#    prometheusOperator: # zgodnie z solution, po 4.11 prometheus ma byc na masterach https://access.redhat.com/solutions/6992567
-#      nodeSelector:
-#        node-role.kubernetes.io/infra: ""
-#      tolerations:
-#      - key: node-role.kubernetes.io/infra
-#        value: reserved
-#        effect: NoSchedule
+    prometheusOperator: 
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - key: node-role.kubernetes.io/infra
+        effect: NoSchedule
