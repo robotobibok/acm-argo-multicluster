@@ -9,3 +9,4 @@ bases:
 #- ../../manifests/ingress-config
 #- ../../manifests/imageregistry-config
 #- ../../manifests/monitoring-config
+- ../../manifests/alertmanager/overlays/prod
