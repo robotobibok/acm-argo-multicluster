@@ -12,3 +12,4 @@ bases:
 #- ../../manifests/acm-policy-odf # nie mozna uruchomic storagesystem, moze za wysoka wersja vmware
 #- ../../manifests/acm-policy-acs # problem z violation, pewnie jakis bug: violation - subscriptions [rhacs-operator] in namespace rhacs-operator is missing, and cannot be created, reason: `subscriptions.operators.coreos.com "rhacs-operator" already exists`
 - ../../manifests/machine-set/infra.eskom.demo
+- ../../manifests/alertmanager/overlays/infra
