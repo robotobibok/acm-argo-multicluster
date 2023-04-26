@@ -139,3 +139,10 @@ vi /etc/vmware-vapi/endpoint.properties
 service-control --restart vmware-vapi-endpoint
 ```
 t
+
+alertmanager
+```
+[ocp@bastion infra]$ oc -n openshift-monitoring create secret generic alertmanager-main --from-file=alertmanager.yaml --dry-run -o=yaml > secret.yaml
+W0426 11:51:21.875263   74769 helpers.go:663] --dry-run is deprecated and can be replaced with --dry-run=client.
+[ocp@bastion infra]$ kubeseal --format yaml --controller-namespace sealed-secrets <secret.yaml > secret-sealed.yaml
+```
