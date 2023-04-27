@@ -29,7 +29,7 @@ route:
   group_interval: 15m
   group_wait: 30s
   receiver: Default
-  repeat_interval: 1h
+  repeat_interval: 12h
   routes:
     - receiver: drop
       match:
