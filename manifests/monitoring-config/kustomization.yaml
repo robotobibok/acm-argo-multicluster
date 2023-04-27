@@ -2,5 +2,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-#- monitoring.yaml # przy updatre problem z 0/9 nodes are available: 3 node(s) didn't match Pod's node affinity/selector, 3 node(s) had untolerated taint {node-role.kubernetes.io/infra: }, 3 node(s) had untolerated taint {node-role.kubernetes.io/master: }. preemption: 0/9 nodes are available: 9 Preemption is not helpful for scheduling.
+- monitoring.yaml # przy updatre problem z 0/9 nodes are available: 3 node(s) didn't match Pod's node affinity/selector, 3 node(s) had untolerated taint {node-role.kubernetes.io/infra: }, 3 node(s) had untolerated taint {node-role.kubernetes.io/master: }. preemption: 0/9 nodes are available: 9 Preemption is not helpful for scheduling.
    # https://access.redhat.com/solutions/6992567
