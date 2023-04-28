@@ -146,3 +146,10 @@ alertmanager
 W0426 11:51:21.875263   74769 helpers.go:663] --dry-run is deprecated and can be replaced with --dry-run=client.
 [ocp@bastion infra]$ kubeseal --format yaml --controller-namespace sealed-secrets <secret.yaml > secret-sealed.yaml
 ```
+
+### Manualny deploy sealed-secrets na utworzony klaster
+```
+[ocp@bastion acm-argo-multicluster]$ cd manual
+[ocp@bastion manual]$ ./deploy-sealed-secrets.sh <clastername>
+```
+
