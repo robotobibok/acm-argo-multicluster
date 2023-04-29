@@ -158,3 +158,5 @@ node/infra-5lgrz-worker-hxb8z labeled
 [ocp@bastion ~]$ oc label node infra-5lgrz-worker-dr6zz cluster.ocs.openshift.io/openshift-storage="" --overwrite=true
 node/infra-5lgrz-worker-dr6zz labeled
 ```
+
+do powyzszych 4-> 8vcpu, 16 -> 24GB bo mdf i osd nie wstawaly
