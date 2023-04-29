@@ -146,3 +146,15 @@ alertmanager
 W0426 11:51:21.875263   74769 helpers.go:663] --dry-run is deprecated and can be replaced with --dry-run=client.
 [ocp@bastion infra]$ kubeseal --format yaml --controller-namespace sealed-secrets <secret.yaml > secret-sealed.yaml
 ```
+
+odf  
+recznie enable w konsoli ocp dodatku do odf //TODO
+reczne labelowanie: //TODO
+```
+[ocp@bastion ~]$ oc label node infra-5lgrz-worker-zv7s5 cluster.ocs.openshift.io/openshift-storage="" --overwrite=true
+node/infra-5lgrz-worker-zv7s5 labeled
+[ocp@bastion ~]$ oc label node infra-5lgrz-worker-hxb8z cluster.ocs.openshift.io/openshift-storage="" --overwrite=true
+node/infra-5lgrz-worker-hxb8z labeled
+[ocp@bastion ~]$ oc label node infra-5lgrz-worker-dr6zz cluster.ocs.openshift.io/openshift-storage="" --overwrite=true
+node/infra-5lgrz-worker-dr6zz labeled
+```
