@@ -6,4 +6,5 @@ namespace: openshift-storage
 resources:
 - storagesystem.yaml
 - storagecluster.yaml
+- ocsinit.yaml
 
