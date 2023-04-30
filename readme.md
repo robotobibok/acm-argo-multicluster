@@ -159,4 +159,4 @@ node/infra-5lgrz-worker-hxb8z labeled
 node/infra-5lgrz-worker-dr6zz labeled
 ```
 
-do powyzszych 4-> 8vcpu, 16 -> 24GB bo mdf i osd nie wstawaly
+do powyzszych 4-> 12vcpu, 16 -> 24GB bo mdf i osd nie wstawaly
