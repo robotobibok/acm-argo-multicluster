@@ -8,10 +8,3 @@ spec:
   channel: release-2.7
   installPlanApproval: Automatic
   name: advanced-cluster-management
-  config:
-    nodeSelector:
-      node-role.kubernetes.io/infra: ""
-    tolerations:
-    - key: node-role.kubernetes.io/infra
-      effect: NoSchedule
-      operator: Exists
