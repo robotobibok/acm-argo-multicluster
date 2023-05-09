@@ -7,5 +7,5 @@ resources:
 - infra-appproj.yaml
 - infra-config-app.yaml
 #- infra-deploy-dev-app.yaml
-- infra-deploy-test-app.yaml
-- infra-deploy-prod-app.yaml
+#- infra-deploy-test-app.yaml
+#- infra-deploy-prod-app.yaml
