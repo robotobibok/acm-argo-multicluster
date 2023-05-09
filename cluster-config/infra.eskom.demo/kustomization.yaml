@@ -13,5 +13,5 @@ bases:
 #- ../../manifests/acm-policy-acs # problem z violation, pewnie jakis bug: violation - subscriptions [rhacs-operator] in namespace rhacs-operator is missing, and cannot be created, reason: `subscriptions.operators.coreos.com "rhacs-operator" already exists`
 - ../../manifests/machine-set/infra.eskom.demo
 - ../../manifests/alertmanager/overlays/infra
-- ../../manifests/odf-operator
-- ../../manifests/odf-instance
+#- ../../manifests/odf-operator
+#- ../../manifests/odf-instance
