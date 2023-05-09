@@ -40,7 +40,7 @@ acm-argo-multicluster
 - deploy z bastiona, user ocp  
 ``export KUBECONFIG=/home/ocp/infra.eskom.demo/auth/kubeconfig``
 
-start z pierwszego klastra (infra), wymaga zainstalowanego ACM:
+start z pierwszego klastra (infra)
 ```
 oc apply -k bootstrap/namespaces
 oc apply -k bootstrap/acm-operator
