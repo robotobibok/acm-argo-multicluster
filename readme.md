@@ -43,6 +43,7 @@ acm-argo-multicluster
 start z pierwszego klastra (infra), wymaga zainstalowanego ACM:
 ```
 oc apply -k bootstrap/namespaces
+oc apply -k bootstrap/acm-operator
 oc apply -k bootstrap/gitops-operator
 oc apply -k bootstrap/sealed-secrets
 oc apply -k bootstrap/argocd-apps 
