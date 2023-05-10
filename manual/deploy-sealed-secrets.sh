@@ -4,7 +4,7 @@
 
 DEPLOYED_CLUSER_NAME=$1
 INFRA_CLUSTER_API_URL="https://api.infra.eskom.demo"
-TLS_SECRET_NAME="prod-keys"
+TLS_SECRET_NAME="${DEPLOYED_CLUSER_NAME}-keys"
 
 # Login infra cluster
 echo "Logowanie do clustra infra"
@@ -32,7 +32,7 @@ oc extract secret/${DEPLOYED_CLUSER_NAME}-tls-sealed-secrets \
 
 # Get kubeconfig to deployed cluster
 temp_kubeconfig_dir=$(mktemp -d ${PWD}/auth.XXXXX)
-oc extract secret/$(oc get secrets -n prod | grep -o -e "${DEPLOYED_CLUSER_NAME}-.*-kubeconfig") \
+oc extract secret/$(oc get secrets -n ${DEPLOYED_CLUSER_NAME} | grep -o -e "${DEPLOYED_CLUSER_NAME}-.*-kubeconfig") \
        --to $temp_kubeconfig_dir -n $DEPLOYED_CLUSER_NAME > /dev/null
 
 [ $? -eq 0 ] || { echo "Error: Brak kubeconfig dla powołanego klastra"; rm -rf $temp_kubeconfig_dir; exit 1; }
@@ -48,7 +48,6 @@ oc create secret tls $TLS_SECRET_NAME -n sealed-secrets \
         --cert="${temp_tls_dir}/tls.crt" --key="${temp_tls_dir}/tls.key"
 oc label secret/$TLS_SECRET_NAME sealedsecrets.bitnami.com/sealed-secrets-key=active -n sealed-secrets
 oc delete pod -l name=sealed-secrets-controller -n sealed-secrets
-oc logout
 
 rm -rf $temp_tls_dir
 rm -rf $temp_kubeconfig_dir
