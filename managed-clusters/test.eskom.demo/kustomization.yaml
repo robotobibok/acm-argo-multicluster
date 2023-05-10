@@ -14,3 +14,4 @@ resources:
 - secrets/test-install-config.yaml
 - secrets/test-pull-secret.yaml
 - secrets/test-ssh-private-key.yaml
+- secrets/test-tls-sealed-secrets.yaml
