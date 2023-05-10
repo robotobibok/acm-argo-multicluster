@@ -3,23 +3,23 @@ kind: MachineSet
 metadata:
   creationTimestamp: null
   labels:
-    machine.openshift.io/cluster-api-cluster: test-tfcc7 # CHANGEME
-  name: test-tfcc7-infra # CHANGEME
+    machine.openshift.io/cluster-api-cluster: test-mxnb2 # CHANGEME
+  name: test-mxnb2-infra # CHANGEME
   namespace: openshift-machine-api 
 spec:
   replicas: 3
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: test-tfcc7 # CHANGEME np test-8asd86a
-      machine.openshift.io/cluster-api-machineset: test-tfcc7-infra # CHANGEME np test-8asd86a-infra
+      machine.openshift.io/cluster-api-cluster: test-mxnb2 # CHANGEME np test-8asd86a
+      machine.openshift.io/cluster-api-machineset: test-mxnb2-infra # CHANGEME np test-8asd86a-infra
   template:
     metadata:
       creationTimestamp: null
       labels:
-        machine.openshift.io/cluster-api-cluster: test-tfcc7  # CHANGEME np test-8asd86a
+        machine.openshift.io/cluster-api-cluster: test-mxnb2  # CHANGEME np test-8asd86a
         machine.openshift.io/cluster-api-machine-role: infra
         machine.openshift.io/cluster-api-machine-type: infra
-        machine.openshift.io/cluster-api-machineset: test-tfcc7-infra # CHANGEME np test-8asd86a-infra
+        machine.openshift.io/cluster-api-machineset: test-mxnb2-infra # CHANGEME np test-8asd86a-infra
     spec:
       metadata:
         creationTimestamp: null
@@ -44,12 +44,12 @@ spec:
           numCPUs: 4
           numCoresPerSocket: 1
           snapshot: ""
-          template: test-tfcc7-rhcos # CHANGEME np test-8asd86a-rhcos
+          template: test-mxnb2-rhcos # CHANGEME np test-8asd86a-rhcos
           userDataSecret:
             name: worker-user-data
           workspace:
             datacenter: Datacenter
             datastore: ceph_hdd
-            folder: /Datacenter/vm/test-tfcc7 # CHANGEME np /Datacenter/vm/dev-hcq6z
+            folder: /Datacenter/vm/test-mxnb2 # CHANGEME np /Datacenter/vm/dev-hcq6z
             resourcePool: /Datacenter/host/Synergy/Resources # CHANGEME np/Datacenter/host/Synergy/Resources
             server: vcenter.elab.local

@@ -1,23 +1,23 @@
 apiVersion: machine.openshift.io/v1beta1
 kind: MachineSet
 metadata:
-  name: test-tfcc7-worker
+  name: test-mxnb2-worker
   namespace: openshift-machine-api
   labels:
-    machine.openshift.io/cluster-api-cluster: test-tfcc7
+    machine.openshift.io/cluster-api-cluster: test-mxnb2
 spec:
   replicas: 3
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: test-tfcc7
-      machine.openshift.io/cluster-api-machineset: test-tfcc7-worker
+      machine.openshift.io/cluster-api-cluster: test-mxnb2
+      machine.openshift.io/cluster-api-machineset: test-mxnb2-worker
   template:
     metadata:
       labels:
-        machine.openshift.io/cluster-api-cluster: test-tfcc7
+        machine.openshift.io/cluster-api-cluster: test-mxnb2
         machine.openshift.io/cluster-api-machine-role: worker
         machine.openshift.io/cluster-api-machine-type: worker
-        machine.openshift.io/cluster-api-machineset: test-tfcc7-worker
+        machine.openshift.io/cluster-api-machineset: test-mxnb2-worker
     spec:
       lifecycleHooks: {}
       metadata: {}
@@ -41,8 +41,8 @@ spec:
           workspace:
             datacenter: Datacenter
             datastore: ceph_hdd
-            folder: /Datacenter/vm/test-tfcc7
+            folder: /Datacenter/vm/test-mxnb2
             resourcePool: /Datacenter/host/Synergy/Resources
             server: vcenter.elab.local
-          template: test-tfcc7-rhcos
+          template: test-mxnb2-rhcos
           apiVersion: machine.openshift.io/v1beta1
