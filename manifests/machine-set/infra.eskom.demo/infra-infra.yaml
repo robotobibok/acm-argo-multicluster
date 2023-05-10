@@ -1,0 +1,55 @@
+apiVersion: machine.openshift.io/v1beta1
+kind: MachineSet
+metadata:
+  creationTimestamp: null
+  labels:
+    machine.openshift.io/cluster-api-cluster: infra-6qqxq # CHANGEME
+  name: infra-6qqxq-infra # CHANGEME
+  namespace: openshift-machine-api 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      machine.openshift.io/cluster-api-cluster: infra-6qqxq # CHANGEME np test-8asd86a
+      machine.openshift.io/cluster-api-machineset: infra-6qqxq-infra # CHANGEME np test-8asd86a-infra
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        machine.openshift.io/cluster-api-cluster: infra-6qqxq  # CHANGEME np test-8asd86a
+        machine.openshift.io/cluster-api-machine-role: infra
+        machine.openshift.io/cluster-api-machine-type: infra
+        machine.openshift.io/cluster-api-machineset: infra-6qqxq-infra # CHANGEME np test-8asd86a-infra
+    spec:
+      metadata:
+        creationTimestamp: null
+        labels:
+          node-role.kubernetes.io/infra: "" 
+      taints: 
+      - key: node-role.kubernetes.io/infra
+        effect: NoSchedule
+      providerSpec:
+        value:
+          apiVersion: machine.openshift.io/v1beta1
+          credentialsSecret:
+            name: vsphere-cloud-credentials
+          diskGiB: 120
+          kind: VSphereMachineProviderSpec
+          memoryMiB: 8192
+          metadata:
+            creationTimestamp: null
+          network:
+            devices:
+            - networkName: "vlan141" 
+          numCPUs: 4
+          numCoresPerSocket: 1
+          snapshot: ""
+          template: infra-6qqxq-rhcos # CHANGEME np test-8asd86a-rhcos
+          userDataSecret:
+            name: worker-user-data
+          workspace:
+            datacenter: Datacenter
+            datastore: ceph_hdd
+            folder: /Datacenter/vm/infra-6qqxq # CHANGEME np /Datacenter/vm/dev-hcq6z
+            resourcePool: /Datacenter/host/Synergy/Resources # CHANGEME np/Datacenter/host/Synergy/Resources
+            server: vcenter.elab.local

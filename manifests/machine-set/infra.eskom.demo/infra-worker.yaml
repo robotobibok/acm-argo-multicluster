@@ -1,23 +1,23 @@
 apiVersion: machine.openshift.io/v1beta1
 kind: MachineSet
 metadata:
-  name: infra-5lgrz-worker
+  name: infra-6qqxq-worker
   namespace: openshift-machine-api
   labels:
-    machine.openshift.io/cluster-api-cluster: infra-5lgrz
+    machine.openshift.io/cluster-api-cluster: infra-6qqxq
 spec:
-  replicas: 6
+  replicas: 3
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: infra-5lgrz
-      machine.openshift.io/cluster-api-machineset: infra-5lgrz-worker
+      machine.openshift.io/cluster-api-cluster: infra-6qqxq
+      machine.openshift.io/cluster-api-machineset: infra-6qqxq-worker
   template:
     metadata:
       labels:
-        machine.openshift.io/cluster-api-cluster: infra-5lgrz
+        machine.openshift.io/cluster-api-cluster: infra-6qqxq
         machine.openshift.io/cluster-api-machine-role: worker
         machine.openshift.io/cluster-api-machine-type: worker
-        machine.openshift.io/cluster-api-machineset: infra-5lgrz-worker
+        machine.openshift.io/cluster-api-machineset: infra-6qqxq-worker
     spec:
       lifecycleHooks: {}
       metadata: {}
@@ -41,8 +41,8 @@ spec:
           workspace:
             datacenter: Datacenter
             datastore: ceph_hdd
-            folder: /Datacenter/vm/infra-5lgrz
+            folder: /Datacenter/vm/infra-6qqxq
             resourcePool: /Datacenter/host/Synergy/Resources
             server: vcenter.elab.local
-          template: infra-5lgrz-rhcos
+          template: infra-6qqxq-rhcos
           apiVersion: machine.openshift.io/v1beta1
