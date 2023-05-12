@@ -11,3 +11,4 @@ bases:
 - ../../manifests/monitoring-config
 - ../../manifests/alertmanager/overlays/test
 - ../../manifests/pipelines-operator
+- ../../manifests/gitops-operator
