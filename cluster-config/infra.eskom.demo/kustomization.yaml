@@ -5,7 +5,7 @@ bases:
 - ../../manifests/namespaces
 - ../../manifests/oauth-htpasswd/overlays/infra
 - ../../manifests/rbac/overlays/infra
-- ../../manifests/gitops-config
+#- ../../manifests/gitops-config
 #- ../../manifests/acm-policy-sso
 #- ../../manifests/acm-policy-webterminal # failed to sync cluster https://172.30.0.1:443: failed to load initial state of resource DevWorkspace.workspace.devfile.io: Internal error occurred: error resolving resource
 - ../../manifests/acm-policy-etcd-encrypt
