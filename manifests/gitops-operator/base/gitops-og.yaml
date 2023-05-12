@@ -3,7 +3,5 @@ kind: OperatorGroup
 metadata:
   name: gitops-operator
   namespace: openshift-gitops
-  annotations:
-    argocd.argoproj.io/sync-wave: "2"
 spec:
   upgradeStrategy: Default
