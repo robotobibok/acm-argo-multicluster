@@ -15,3 +15,4 @@ bases:
 - ../../manifests/alertmanager/overlays/infra
 #- ../../manifests/odf-operator
 #- ../../manifests/odf-instance
+- ../../manifests/machine-autoscalers/infra.eskom.demo
