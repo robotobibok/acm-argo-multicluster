@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: webapp
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  description: Prosta strona internetowa
+  sourceRepos:
+    - "https://github.com/pbartczak/*"
+  destinations:
+    - namespace: "*"
+      server: https://kubernetes.default.svc

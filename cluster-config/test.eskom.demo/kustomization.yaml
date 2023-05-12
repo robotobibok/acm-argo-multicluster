@@ -12,3 +12,4 @@ bases:
 - ../../manifests/alertmanager/overlays/test
 - ../../manifests/pipelines-operator
 - ../../manifests/gitops-operator/overlays/test
+- ../../manifests/applications/test.eskom.demo/webapp
