@@ -10,5 +10,8 @@ spec:
   sourceRepos:
     - "https://github.com/pbartczak/*"
   destinations:
-    - namespace: "*"
+    - namespace: "webapp-*"
       server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: ""
+      kind: "Namespace"
