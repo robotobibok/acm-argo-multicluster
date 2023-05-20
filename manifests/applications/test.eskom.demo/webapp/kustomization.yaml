@@ -5,3 +5,4 @@ resources:
 - project.yaml
 - application-dev.yaml
 - application-prod.yaml
+- application-pieplines.yaml

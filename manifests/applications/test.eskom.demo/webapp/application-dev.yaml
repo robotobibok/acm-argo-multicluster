@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/pbartczak/gitops-app-config.git
     targetRevision: main
-    path: webapp/overlays/dev
+    path: webapp/cd/overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: webapp-dev
