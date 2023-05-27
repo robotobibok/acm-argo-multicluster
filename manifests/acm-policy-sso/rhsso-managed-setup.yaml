@@ -92,7 +92,7 @@ spec:
                   clientID: '{{hub .ManagedClusterName hub}}'
                   clientSecret:
                     name: rhsso-client-secret
-                  issuer: '{{hub (lookup "keycloak.org/v1alpha1" "Keycloak" "rhsso" "rhsso").status.externalURL hub}}/auth/realms/test'
+                  issuer: '{{hub (lookup "keycloak.org/v1alpha1" "Keycloak" "rhsso" "rhsso").status.externalURL hub}}/auth/realms/acm'
         remediationAction: enforce
         severity: medium
   remediationAction: enforce
