@@ -72,27 +72,27 @@ spec:
                     name: htpass-secret
                 mappingMethod: claim
                 type: HTPasswd              
-              - mappingMethod: claim
-                name: rhsso
-                type: OpenID
-                openID:
-                  ca:
-                    name: rhsso-ca-crt
-                  claims:
-                    email:
-                    - custom_email_claim
-                    - email
-                    name:
-                    - nickname
-                    - given_name
-                    - name
-                    preferredUsername:
-                    - preferred_username
-                    - email
-                  clientID: '{{hub .ManagedClusterName hub}}'
-                  clientSecret:
-                    name: rhsso-client-secret
-                  issuer: '{{hub (lookup "keycloak.org/v1alpha1" "Keycloak" "rhsso" "rhsso").status.externalURL hub}}/auth/realms/acm'
+#              - mappingMethod: claim
+#                name: rhsso
+#                type: OpenID
+#                openID:
+#                  ca:
+#                    name: rhsso-ca-crt
+#                  claims:
+#                    email:
+#                    - custom_email_claim
+#                    - email
+#                    name:
+#                    - nickname
+#                    - given_name
+#                    - name
+#                    preferredUsername:
+#                    - preferred_username
+#                    - email
+#                  clientID: '{{hub .ManagedClusterName hub}}'
+#                  clientSecret:
+#                    name: rhsso-client-secret
+#                  issuer: '{{hub (lookup "keycloak.org/v1alpha1" "Keycloak" "rhsso" "rhsso").status.externalURL hub}}/auth/realms/acm'
         remediationAction: enforce
         severity: medium
   remediationAction: enforce
