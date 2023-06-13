@@ -4,4 +4,6 @@ metadata:
   name: zabbix-operator
   namespace: zabbix6
 spec:
+  targetNamespaces:
+    - zabbix6
   upgradeStrategy: Default
