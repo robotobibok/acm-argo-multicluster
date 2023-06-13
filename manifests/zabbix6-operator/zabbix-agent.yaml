@@ -1,0 +1,54 @@
+apiVersion: kubernetes.zabbix.com/v1alpha1
+kind: ZabbixAgent
+metadata:
+  labels:
+    app: agent
+    app.kubernetes.io/component: ZabbixAgent
+    app.kubernetes.io/managed-by: ZabbixAgent-operator
+    app.kubernetes.io/name: zabbix-agent
+    app.kubernetes.io/part-of: zabbix-operator-certified
+    vendor: zabbix
+  name: zabbix-agent
+  namespace: zabbix6
+spec:
+  buffer_size: 100
+  refresh_active_checks: 120
+  timeout: 3
+  host_interface: ''
+  metadata_item: ''
+  server_host: zbx02.eskom.demo
+  unsafe_user_parameters: false
+  load_module: ''
+  tls_connect: unencrypted
+  log_remote_commands: true
+  buffer_send: 5
+  tls_crl_file_name: ''
+  tls_server_cert_subject: ''
+  allow_key: ''
+  allow_privileged: true
+  use_host_node_name: true
+  tls_cipher_psk_13: ''
+  tls_key_file_name: ''
+  activeservers: ''
+  start_agents: 3
+  tls_accept: unencrypted
+  deny_key: 'system.run[*]'
+  tls_cipher_cert_13: ''
+  metadata: ''
+  active_allow: true
+  host_interface_item: ''
+  tls_cipher_all_13: ''
+  passive_allow: true
+  max_lines_per_second: 20
+  tls_ca_file_name: ''
+  tls_cipher_all: ''
+  hostname: ''
+  tls_psk_file_name: ''
+  tls_cipher_cert: ''
+  tls_cert_file_name: ''
+  tls_cipher_psk: ''
+  passive_servers: ''
+  debug_level: 3
+  tls_psk_identity: ''
+  tls_server_cert_issuer: ''
+  hostname_item: system.hostname
