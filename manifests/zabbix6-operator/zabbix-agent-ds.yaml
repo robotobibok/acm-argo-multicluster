@@ -11,11 +11,7 @@ kind: DaemonSet
   - apiVersion: kubernetes.zabbix.com/v1alpha1
     kind: ZabbixAgent
     name: zabbix-agent
-    uid: f31ea1e4-0089-4b26-9dc2-2fc54af6d4ba
-  resourceVersion: "41004775"
-  uid: 66b91e48-848d-4e53-86c5-ce9573a211dd
 spec:
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app.kubernetes.io/component: ZabbixAgent
