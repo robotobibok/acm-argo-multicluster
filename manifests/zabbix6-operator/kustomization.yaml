@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - zabbix-og.yaml
 - zabbix-sub.yaml
-- zabbix-agent-ds.yaml
+- zabbix-agent.yaml
