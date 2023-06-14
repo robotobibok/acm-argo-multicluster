@@ -16,7 +16,7 @@ spec:
   timeout: 3
   host_interface: ''
   metadata_item: 'system.uname'
-  server_host: zbx02.eskom.demo
+  server_host: zabbix-proxy-sqlite-proxy
   unsafe_user_parameters: false
   load_module: ''
   tls_connect: unencrypted
