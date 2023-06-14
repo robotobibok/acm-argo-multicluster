@@ -15,7 +15,7 @@ spec:
   refresh_active_checks: 120
   timeout: 3
   host_interface: ''
-  metadata_item: ''
+  metadata_item: 'system.uname'
   server_host: zbx02.eskom.demo
   unsafe_user_parameters: false
   load_module: ''
