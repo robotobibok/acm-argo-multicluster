@@ -3,12 +3,6 @@ kind: ArgoCD
 metadata:
   name: openshift-gitops
   namespace: openshift-gitops
-  ownerReferences:
-    - apiVersion: pipelines.openshift.io/v1alpha1
-      blockOwnerDeletion: true
-      controller: true
-      kind: GitopsService
-      name: cluster
   finalizers:
     - argoproj.io/finalizer
 spec:
