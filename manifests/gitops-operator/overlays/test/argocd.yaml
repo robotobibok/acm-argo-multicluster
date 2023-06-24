@@ -14,7 +14,6 @@ spec:
         enabled: false
     ingress:
       enabled: false
-    insecure: true
     resources:
       limits:
         cpu: 500m
@@ -24,9 +23,6 @@ spec:
         memory: 128Mi
     route:
       enabled: true
-      tls:
-        insecureEdgeTerminationPolicy: Redirect
-        termination: edge
     service:
       type: ""
   grafana:

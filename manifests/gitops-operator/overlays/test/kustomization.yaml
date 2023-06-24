@@ -7,7 +7,7 @@ bases:
 resources:
 - gitops-ns.yaml
 - rbac-cluster-admin-gitops.yaml
-#- argocd.yaml
+- argocd.yaml
 
 patches:
 - patch: |-
