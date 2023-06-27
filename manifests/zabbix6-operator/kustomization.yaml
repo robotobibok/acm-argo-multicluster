@@ -4,4 +4,5 @@ resources:
 - zabbix-ns.yaml
 - zabbix-og.yaml
 - zabbix-sub.yaml
-- zabbix-agent.yaml
+- zabbix-agent-crd.yaml
+- zabbix-agent-ds.yaml
