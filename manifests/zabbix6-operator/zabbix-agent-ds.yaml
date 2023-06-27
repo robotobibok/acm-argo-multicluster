@@ -1,16 +1,17 @@
-apiVersion: apps/v1
 kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: zabbix-agent
+  namespace: zabbix6
+  ownerReferences:
+    - apiVersion: kubernetes.zabbix.com/v1alpha1
+      kind: ZabbixAgent
+      name: zabbix-agent
   labels:
     app.kubernetes.io/component: ZabbixAgent
     app.kubernetes.io/managed-by: ZabbixAgent-operator
     app.kubernetes.io/name: zabbix-agent
     app.kubernetes.io/part-of: zabbix-agent
-  name: zabbix-agent
-  namespace: zabbix6
-  ownerReferences:
-  - apiVersion: kubernetes.zabbix.com/v1alpha1
-    kind: ZabbixAgent
-    name: zabbix-agent
 spec:
   selector:
     matchLabels:
@@ -26,62 +27,70 @@ spec:
         app.kubernetes.io/name: zabbix-agent
         app.kubernetes.io/part-of: zabbix-agent
     spec:
+      restartPolicy: Always
+      serviceAccountName: zabbix-agent
+      hostPID: true
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
+      securityContext: {}
       containers:
-      - env:
-        - name: ZBX_DEBUGLEVEL
-          value: "3"
-        - name: ZBX_DENYKEY
-          value: system.run[*]
-        - name: ZBX_ALLOWKEY
-        - name: ZBX_LOGREMOTECOMMANDS
-          value: "1"
-        - name: ZBX_SERVER_HOST
-          value: zbx02.eskom.demo
-        - name: ZBX_PASSIVE_ALLOW
-          value: "true"
-        - name: ZBX_PASSIVESERVERS
-        - name: ZBX_ACTIVE_ALLOW
-          value: "true"
-        - name: ZBX_ACTIVESERVERS
-        - name: ZBX_STARTAGENTS
-          value: "3"
-        - name: ZBX_HOSTNAME
-          valueFrom:
-            fieldRef:
-              apiVersion: v1
-              fieldPath: spec.nodeName
-        - name: ZBX_METADATA
-        - name: ZBX_METADATAITEM
-        - name: ZBX_TIMEOUT
-          value: "3"
-        - name: ZBX_BUFFERSEND
-          value: "5"
-        - name: ZBX_BUFFERSIZE
-          value: "100"
-        - name: ZBX_MAXLINESPERSECOND
-          value: "20"
-        - name: ZBX_UNSAFEUSERPARAMETERS
-          value: "0"
-        - name: ZBX_HOSTINTERFACE
-        - name: ZBX_HOSTINTERFACEITEM
-        - name: ZBX_REFRESHACTIVECHECKS
-          value: "120"
-        - name: DEBUG_MODE
-          value: "false"
-        image: registry.connect.redhat.com/zabbix/zabbix-agent-60@sha256:f8a43ac1771dedf7716bb00b52b6102bbbcc766ce3fe6d00b052f65f0870e7e7
-        imagePullPolicy: Always
-        name: agent
-        ports:
-        - containerPort: 10050
-          protocol: TCP
-        resources: {}
-        securityContext:
-          capabilities: {}
-          privileged: true
-          readOnlyRootFilesystem: false
-          runAsNonRoot: true
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: agent
+          env:
+            - name: ZBX_DEBUGLEVEL
+              value: '3'
+            - name: ZBX_DENYKEY
+              value: 'system.run[*]'
+            - name: ZBX_ALLOWKEY
+            - name: ZBX_LOGREMOTECOMMANDS
+              value: '1'
+            - name: ZBX_SERVER_HOST
+              value: zbx02.eskom.demo
+            - name: ZBX_PASSIVE_ALLOW
+              value: 'true'
+            - name: ZBX_PASSIVESERVERS
+            - name: ZBX_ACTIVE_ALLOW
+              value: 'true'
+            - name: ZBX_ACTIVESERVERS
+            - name: ZBX_STARTAGENTS
+              value: '3'
+            - name: ZBX_HOSTNAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
+            - name: ZBX_METADATA
+            - name: ZBX_METADATAITEM
+            - name: ZBX_TIMEOUT
+              value: '3'
+            - name: ZBX_BUFFERSEND
+              value: '5'
+            - name: ZBX_BUFFERSIZE
+              value: '100'
+            - name: ZBX_MAXLINESPERSECOND
+              value: '20'
+            - name: ZBX_UNSAFEUSERPARAMETERS
+              value: '0'
+            - name: ZBX_HOSTINTERFACE
+            - name: ZBX_HOSTINTERFACEITEM
+            - name: ZBX_REFRESHACTIVECHECKS
+              value: '120'
+            - name: DEBUG_MODE
+              value: 'false'
+          securityContext:
+            capabilities: {}
+            privileged: true
+            runAsNonRoot: true
+            readOnlyRootFilesystem: false
+          ports:
+            - containerPort: 10050
+              protocol: TCP
+          imagePullPolicy: Always
+          terminationMessagePolicy: File
+          image: >-
+            registry.connect.redhat.com/zabbix/zabbix-agent-60@sha256:f8a43ac1771dedf7716bb00b52b6102bbbcc766ce3fe6d00b052f65f0870e7e7
+      serviceAccount: zabbix-agent
       dnsPolicy: ClusterFirst
       tolerations:
         - key: node-role.kubernetes.io/master
@@ -90,10 +99,10 @@ spec:
         - key: node-role.kubernetes.io/infra
           operator: Exists
           effect: NoSchedule
-      hostPID: true
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      serviceAccount: zabbix-agent
-      serviceAccountName: zabbix-agent
-      terminationGracePeriodSeconds: 30
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 0
+  revisionHistoryLimit: 10
+
