@@ -3,6 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: zabbix-agent
   namespace: zabbix6
+  uid: 21cabd54-2d1e-4354-adab-f7e0be4d4c5e
   ownerReferences:
     - apiVersion: kubernetes.zabbix.com/v1alpha1
       kind: ZabbixAgent
