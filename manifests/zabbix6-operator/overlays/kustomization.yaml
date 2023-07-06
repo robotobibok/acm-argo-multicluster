@@ -3,10 +3,32 @@ kind: Kustomization
 bases:
 - ../base
 
+# patches:
+# - target:
+#     group: apps
+#     version: v1
+#     kind: DaemonSet
+#     name: zabbix-agent
+#   patch: zabbix-agent-ds.yaml
+
 patches:
 - target:
     group: apps
     version: v1
     kind: DaemonSet
     name: zabbix-agent
-  patch: zabbix-agent-ds.yaml
+  patch: |-
+    apiVersion: apps/v1
+    kind: DaemonSet
+    metadata:
+      name: zabbix-agent
+    spec:
+      template:
+        spec:
+          tolerations:
+            - key: node-role.kubernetes.io/master
+              operator: Exists
+              effect: NoSchedule
+            - key: node-role.kubernetes.io/infra
+              operator: Exists
+              effect: NoSchedule
