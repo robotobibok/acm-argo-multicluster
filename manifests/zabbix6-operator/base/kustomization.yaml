@@ -5,4 +5,5 @@ resources:
 - zabbix-og.yaml
 - zabbix-sub.yaml
 - zabbix-agent-crd.yaml
+patches:
 - zabbix-agent-ds.yaml
