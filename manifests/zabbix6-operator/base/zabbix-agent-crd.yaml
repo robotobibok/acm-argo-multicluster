@@ -9,7 +9,6 @@ metadata:
     app.kubernetes.io/part-of: zabbix-operator-certified
     vendor: zabbix
   name: zabbix-agent
-  uid: 28f34e04-88a2-43a3-91c4-dd736a1628fb
   namespace: zabbix6
 spec:
   buffer_size: 100
