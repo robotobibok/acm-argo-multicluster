@@ -11,10 +11,10 @@ spec:
         volumeMounts:
           - name: rootfs
             mountPath: /rootfs
-        volumes:
-          - name: rootfs
-            hostPath:
-              path: /
+      volumes:
+        - name: rootfs
+          hostPath:
+            path: /
       tolerations:
         - key: node-role.kubernetes.io/master
           operator: Exists
