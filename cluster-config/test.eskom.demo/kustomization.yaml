@@ -13,4 +13,4 @@ bases:
 - ../../manifests/pipelines-operator
 - ../../manifests/gitops-operator/overlays/test
 - ../../manifests/applications/test.eskom.demo/webapp
-- ../../manifests/zabbix6-operator/overlays
+# - ../../manifests/zabbix6-operator/overlays
