@@ -6,15 +6,15 @@ metadata:
 spec:
   template:
     spec:
-      containers:
-      - name: agent
-        volumeMounts:
-          - name: rootfs
-            mountPath: /rootfs
-      volumes:
-        - name: rootfs
-          hostPath:
-            path: /
+      # containers:
+      # - name: agent
+      #   volumeMounts:
+      #     - name: rootfs
+      #       mountPath: /rootfs
+      # volumes:
+      #   - name: rootfs
+      #     hostPath:
+      #       path: /
       tolerations:
         - key: node-role.kubernetes.io/master
           operator: Exists
