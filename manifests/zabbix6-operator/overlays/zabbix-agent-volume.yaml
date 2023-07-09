@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: zabbix-agent
+  namespace: zabbix6
+spec:
+  template:
+    spec:
+      containers:
+        volumeMounts:
+          - name: rootfs
+            mountPath: /rootfs
+        volumes:
+          - name: rootfs
+            hostPath:
+              path: /
