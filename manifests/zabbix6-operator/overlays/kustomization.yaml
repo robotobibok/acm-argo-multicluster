@@ -3,6 +3,9 @@ kind: Kustomization
 bases:
 - ../base
 
+resources:
+- zabbix-agent-ds.yaml
+
 # patches:
 # - target:
 #     group: apps
