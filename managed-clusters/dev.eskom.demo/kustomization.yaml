@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - dev-ns.yaml
+- clusterimageset.yaml
 - dev-clusterdeployment.yaml
 - dev-managedcluster.yaml
 - dev-managedclusterinfo.yaml

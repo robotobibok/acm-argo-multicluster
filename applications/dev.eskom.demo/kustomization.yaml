@@ -5,4 +5,4 @@ namespace: openshift-gitops
 
 resources:
 - dev-appproj.yaml
-- dev-config-app.yaml
+#- dev-config-app.yaml

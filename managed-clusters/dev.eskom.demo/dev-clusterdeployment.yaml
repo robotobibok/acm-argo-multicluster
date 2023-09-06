@@ -31,7 +31,7 @@ spec:
     sshPrivateKeySecretRef:
       name: dev-ssh-private-key
     imageSetRef:
-       #quay.io/openshift-release-dev/ocp-release:4.11.32-x86_64
-      name: img4.12.9-multi-appsub
+      #quay.eskom.demo/ocp4/openshift/release-images:4.12.10-x86_64
+      name: img4.12.10-x86-64
   pullSecretRef:
     name: dev-pull-secret
