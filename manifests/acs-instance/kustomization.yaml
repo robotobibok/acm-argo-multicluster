@@ -11,5 +11,5 @@ resources:
   - namespace.yaml
   - create-cluster-init-bundle-sa.yaml
   - central.yaml
-  - create-cluster-init-bundle-job.yaml
   - secured-cluster.yaml
+  - create-cluster-init-bundle-job.yaml
