@@ -36,7 +36,7 @@ spec:
               - networkName: vlan141
           metadata:
             creationTimestamp: null
-          numCPUs: 4
+          numCPUs: 6
           kind: VSphereMachineProviderSpec
           workspace:
             datacenter: Datacenter
