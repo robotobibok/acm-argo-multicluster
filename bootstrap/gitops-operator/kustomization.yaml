@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
+- gitops-operator-ns.yaml
 - gitops-operator-appsub.yaml
 - gitops-operator-app.yaml
 - gitops-operator-channel.yaml
