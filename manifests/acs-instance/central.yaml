@@ -3,8 +3,9 @@ apiVersion: platform.stackrox.io/v1alpha1
 kind: Central
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "2"
   name: central
+  namespace: stackrox
 spec:
   central:
     exposure:
