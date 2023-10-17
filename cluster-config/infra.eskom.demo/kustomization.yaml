@@ -16,3 +16,4 @@ bases:
   #- ../../manifests/odf-operator
   #- ../../manifests/odf-instance
   - ../../manifests/machine-autoscalers/infra.eskom.demo
+  - acs-app.yaml
