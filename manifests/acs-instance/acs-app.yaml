@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: acs-config
+spec:
+  destination:
+    name: in-cluster
+  project: infra
+  source:
+    path: manifests/test-acs
+    repoURL: https://github.com/robotobibok/acm-argo-multicluster
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false #nie kasujemy automatycznie
+      selfHeal: true
