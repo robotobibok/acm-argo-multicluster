@@ -5,7 +5,7 @@ resources:
 - test-ns.yaml
 - test-clusterdeployment.yaml
 - test-managedcluster.yaml
-- test-managedclusterinfo.yaml
+#- test-managedclusterinfo.yaml
 #- test-machinepool-worker.yaml #niepotrzebna, mozna sterowac iloscia workerow z install-config
 #- test-machinepool-infra.yaml # infry beda z workerami na hdd, dedykowane machineset
 - test-klusterletaddonconfig.yaml
