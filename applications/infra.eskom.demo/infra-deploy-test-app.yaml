@@ -15,3 +15,4 @@ spec:
       prune: false
       selfHeal: true
       applicationsSync: create-only
+      compare-options: IgnoreExtraneous
