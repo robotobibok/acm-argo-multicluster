@@ -10,3 +10,4 @@ bases:
 - ../../manifests/monitoring-config
 - ../../manifests/pipelines-operator
 - ../../manifests/gitops-operator/overlays/test
+- ../../manifests/applications/test.eskom.demo/webapp
