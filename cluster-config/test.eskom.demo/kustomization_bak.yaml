@@ -2,9 +2,15 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 bases:
+#- ../../manifests/namespaces
 - ../../manifests/oauth-htpasswd/overlays/test
 - ../../manifests/rbac/base
 - ../../manifests/machine-set/test.eskom.demo
 - ../../manifests/ingress-config
 - ../../manifests/imageregistry-config
 - ../../manifests/monitoring-config
+- ../../manifests/alertmanager/overlays/test
+- ../../manifests/pipelines-operator
+- ../../manifests/gitops-operator/overlays/test
+- ../../manifests/applications/test.eskom.demo/webapp
+# - ../../manifests/zabbix6-operator/overlays

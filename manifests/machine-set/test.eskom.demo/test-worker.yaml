@@ -1,23 +1,23 @@
 apiVersion: machine.openshift.io/v1beta1
 kind: MachineSet
 metadata:
-  name: test-mxnb2-worker
+  name: test-tx9h4-worker
   namespace: openshift-machine-api
   labels:
-    machine.openshift.io/cluster-api-cluster: test-mxnb2
+    machine.openshift.io/cluster-api-cluster: test-tx9h4
 spec:
   replicas: 3
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: test-mxnb2
-      machine.openshift.io/cluster-api-machineset: test-mxnb2-worker
+      machine.openshift.io/cluster-api-cluster: test-tx9h4
+      machine.openshift.io/cluster-api-machineset: test-tx9h4-worker
   template:
     metadata:
       labels:
-        machine.openshift.io/cluster-api-cluster: test-mxnb2
+        machine.openshift.io/cluster-api-cluster: test-tx9h4
         machine.openshift.io/cluster-api-machine-role: worker
         machine.openshift.io/cluster-api-machine-type: worker
-        machine.openshift.io/cluster-api-machineset: test-mxnb2-worker
+        machine.openshift.io/cluster-api-machineset: test-tx9h4-worker
     spec:
       lifecycleHooks: {}
       metadata: {}
@@ -25,7 +25,7 @@ spec:
         value:
           numCoresPerSocket: 2
           diskGiB: 120
-          snapshot: ''
+          snapshot: ""
           userDataSecret:
             name: worker-user-data
           memoryMiB: 16384
@@ -41,8 +41,8 @@ spec:
           workspace:
             datacenter: Datacenter
             datastore: ceph_hdd
-            folder: /Datacenter/vm/test-mxnb2
+            folder: /Datacenter/vm/test-tx9h4
             resourcePool: /Datacenter/host/Synergy/Resources
             server: vcenter.elab.local
-          template: test-mxnb2-rhcos
+          template: test-tx9h4-rhcos
           apiVersion: machine.openshift.io/v1beta1

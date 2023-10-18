@@ -3,31 +3,31 @@ kind: MachineSet
 metadata:
   creationTimestamp: null
   labels:
-    machine.openshift.io/cluster-api-cluster: test-mxnb2 # CHANGEME
-  name: test-mxnb2-infra # CHANGEME
-  namespace: openshift-machine-api 
+    machine.openshift.io/cluster-api-cluster: test-tx9h4 # CHANGEME
+  name: test-tx9h4-infra # CHANGEME
+  namespace: openshift-machine-api
 spec:
   replicas: 3
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: test-mxnb2 # CHANGEME np test-8asd86a
-      machine.openshift.io/cluster-api-machineset: test-mxnb2-infra # CHANGEME np test-8asd86a-infra
+      machine.openshift.io/cluster-api-cluster: test-tx9h4 # CHANGEME np test-8asd86a
+      machine.openshift.io/cluster-api-machineset: test-tx9h4-infra # CHANGEME np test-8asd86a-infra
   template:
     metadata:
       creationTimestamp: null
       labels:
-        machine.openshift.io/cluster-api-cluster: test-mxnb2  # CHANGEME np test-8asd86a
+        machine.openshift.io/cluster-api-cluster: test-tx9h4 # CHANGEME np test-8asd86a
         machine.openshift.io/cluster-api-machine-role: infra
         machine.openshift.io/cluster-api-machine-type: infra
-        machine.openshift.io/cluster-api-machineset: test-mxnb2-infra # CHANGEME np test-8asd86a-infra
+        machine.openshift.io/cluster-api-machineset: test-tx9h4-infra # CHANGEME np test-8asd86a-infra
     spec:
       metadata:
         creationTimestamp: null
         labels:
-          node-role.kubernetes.io/infra: "" 
-      taints: 
-      - key: node-role.kubernetes.io/infra
-        effect: NoSchedule
+          node-role.kubernetes.io/infra: ""
+      taints:
+        - key: node-role.kubernetes.io/infra
+          effect: NoSchedule
       providerSpec:
         value:
           apiVersion: machine.openshift.io/v1beta1
@@ -40,16 +40,16 @@ spec:
             creationTimestamp: null
           network:
             devices:
-            - networkName: "vlan141" 
+              - networkName: "vlan141"
           numCPUs: 4
           numCoresPerSocket: 1
           snapshot: ""
-          template: test-mxnb2-rhcos # CHANGEME np test-8asd86a-rhcos
+          template: test-tx9h4-rhcos # CHANGEME np test-8asd86a-rhcos
           userDataSecret:
             name: worker-user-data
           workspace:
             datacenter: Datacenter
             datastore: ceph_hdd
-            folder: /Datacenter/vm/test-mxnb2 # CHANGEME np /Datacenter/vm/dev-hcq6z
+            folder: /Datacenter/vm/test-tx9h4 # CHANGEME np /Datacenter/vm/dev-hcq6z
             resourcePool: /Datacenter/host/Synergy/Resources # CHANGEME np/Datacenter/host/Synergy/Resources
             server: vcenter.elab.local
