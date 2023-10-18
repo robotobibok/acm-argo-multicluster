@@ -8,5 +8,3 @@ bases:
 - ../../manifests/ingress-config
 - ../../manifests/imageregistry-config
 - ../../manifests/monitoring-config
-- ../../manifests/pipelines-operator
-- ../../manifests/gitops-operator/overlays/test
