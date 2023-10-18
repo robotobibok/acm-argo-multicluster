@@ -6,3 +6,4 @@ namespace: openshift-gitops
 resources:
   - infra-appproj.yaml
   - infra-config-app.yaml
+  - infra-deploy-test-app.yaml
