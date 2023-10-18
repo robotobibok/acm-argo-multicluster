@@ -3,6 +3,6 @@ kind: Kustomization
 
 bases:
   - infra.eskom.demo
-  #- test.eskom.demo
+  - test.eskom.demo
   #- dev.eskom.demo
   #- prod.eskom.demo
