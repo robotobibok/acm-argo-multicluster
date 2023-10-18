@@ -3,6 +3,8 @@ kind: ClusterRoleBinding
 metadata:
   name: rbac-cluster-admin-gitops
   namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 subjects:
   - kind: ServiceAccount
     name: openshift-gitops-argocd-application-controller
