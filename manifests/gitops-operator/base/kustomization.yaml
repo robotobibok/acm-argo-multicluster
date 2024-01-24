@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
 - gitops-og.yaml
 - gitops-sub.yaml
+- argocd.yaml
