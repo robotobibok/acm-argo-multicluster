@@ -11,7 +11,7 @@ spec:
         cluster: in-cluster
   template:
     metadata:
-      name: "{{ name }}-oauth"
+      name: "{{ name }}-rbac"
     spec:
       project: "{{ name }}"
       source:
