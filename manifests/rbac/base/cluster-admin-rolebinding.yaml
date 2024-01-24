@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: cluster-admin # ocp
+  name: cluster-admin
   annotations:
     argocd.argoproj.io/sync-options: Prune=false
 roleRef:
@@ -12,6 +12,3 @@ subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: User
   name: admin
-- apiGroup: rbac.authorization.k8s.io
-  kind: User
-  name: 05b7e2c2-c53d-4ca8-98be-053f01a1fc86
