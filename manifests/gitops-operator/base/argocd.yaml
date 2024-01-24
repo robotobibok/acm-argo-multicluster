@@ -84,6 +84,7 @@ spec:
       p, role:none, projects, get, *, deny
       p, role:none, accounts, get, *, deny
       p, role:none, gpgkeys, get, *, deny
+      
 
       g, system:cluster-admins, role:admin
       g, cluster-admins, role:admin
