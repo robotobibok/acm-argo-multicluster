@@ -20,4 +20,8 @@ spec:
         path: manifests/oauth/overlays/{{ name }}
       destination:
         name: "{{ cluster }}"
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true
       
