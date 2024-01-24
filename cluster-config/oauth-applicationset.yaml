@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: oauth
+  namespace: openshift-gitops
+spec:
+  generators:
+  - list:
+      elements:
+      - name: infra
+        cluster: in-cluster
+  template:
+    metadata:
+      name: "{{ name }}-oauth"
+    spec:
+      project: "{{ name }}"
+      source:
+        repoURL: "https://github.com/robotobibok/acm-argo-multicluster"
+        targetRevision: main
+        path: manifests/oauth/overlays/{{ name }}
+      destination:
+        name: "{{ cluster }}"
+      
