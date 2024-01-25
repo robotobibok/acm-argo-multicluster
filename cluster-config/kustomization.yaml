@@ -6,4 +6,4 @@ bases:
   - rbac-applicationset.yaml
   - alertmanager-applicationset.yaml
   - machineset-applicationset.yaml
-  - odf-application.yaml
+# - odf-application.yaml
