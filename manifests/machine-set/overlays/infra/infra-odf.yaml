@@ -37,7 +37,7 @@ spec:
           snapshot: ''
           userDataSecret:
             name: worker-user-data
-          memoryMiB: 16384
+          memoryMiB: 24576
           credentialsSecret:
             name: vsphere-cloud-credentials
           network:
@@ -45,7 +45,7 @@ spec:
               - networkName: vlan141
           metadata:
             creationTimestamp: null
-          numCPUs: 4
+          numCPUs: 8
           kind: VSphereMachineProviderSpec
           workspace:
             datacenter: Datacenter
