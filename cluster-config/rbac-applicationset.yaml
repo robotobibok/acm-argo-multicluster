@@ -3,8 +3,6 @@ kind: ApplicationSet
 metadata:
   name: rbac
   namespace: openshift-gitops
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
 spec:
   generators:
   - list:
@@ -22,7 +20,6 @@ spec:
         path: manifests/rbac/overlays/{{ name }}
       destination:
         name: "{{ cluster }}"
-        namespace: gitops
       syncPolicy:
         automated:
           prune: false

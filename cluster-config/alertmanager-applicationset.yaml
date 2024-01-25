@@ -2,9 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: alertmanager
-  namespace: gitops
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
+  namespace: openshift-gitops
 spec:
   generators:
   - list:
@@ -22,7 +20,6 @@ spec:
         path: manifests/alertmanager/overlays/{{ name }}
       destination:
         name: "{{ cluster }}"
-        namespace: gitops
       syncPolicy:
         automated:
           prune: false

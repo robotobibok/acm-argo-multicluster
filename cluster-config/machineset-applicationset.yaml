@@ -2,9 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: machineset
-  namespace: gitops
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
+  namespace: openshift-gitops
 spec:
   generators:
   - list:
