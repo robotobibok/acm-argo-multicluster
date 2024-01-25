@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infra-odf
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: in-cluster
+  project: infra
+  source:
+    path: manifests/odf
+    repoURL: https://github.com/robotobibok/acm-argo-multicluster
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false #nie kasujemy automatycznie
+      selfHeal: true

@@ -2,6 +2,8 @@ apiVersion: console.openshift.io/v1alpha1
 kind: ConsolePlugin
 metadata:
   name: odf-console
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   displayName: ODF Plugin
   service:
