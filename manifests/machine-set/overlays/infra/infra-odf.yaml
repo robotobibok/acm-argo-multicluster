@@ -8,7 +8,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: Prune=false
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: infra-dbjl4
@@ -22,7 +22,14 @@ spec:
         machine.openshift.io/cluster-api-machineset: infra-dbjl4-odf
     spec:
       lifecycleHooks: {}
-      metadata: {}
+      metadata:
+        labels:
+          node-role.kubernetes.io/odf: ""
+          cluster.ocs.openshift.io/openshift-storage: ""
+      taints:
+        - effect: NoSchedule
+          key: node.ocs.openshift.io/storage
+          value: "true"
       providerSpec:
         value:
           numCoresPerSocket: 2
