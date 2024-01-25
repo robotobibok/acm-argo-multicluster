@@ -3,24 +3,51 @@ kind: StorageCluster
 metadata:
   name: ocs-storagecluster
   namespace: openshift-storage
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   arbiter: {}
   encryption:
     kms: {}
   externalStorage: {}
-  flexibleScaling: true
   managedResources:
-    cephBlockPools: {}
-    cephConfig: {}
-    cephDashboard: {}
-    cephFilesystems: {}
     cephObjectStoreUsers: {}
+    cephCluster: {}
+    cephBlockPools: {}
+    cephNonResilientPools: {}
     cephObjectStores: {}
+    cephFilesystems: {}
+    cephToolbox: {}
+    cephDashboard: {}
+    cephConfig: {}
   mirroring: {}
   nodeTopologies: {}
+  resources:
+    mds:
+      limits:
+        cpu: '3'
+        memory: 8Gi
+      requests:
+        cpu: '1'
+        memory: 8Gi
+    rgw:
+      limits:
+        cpu: '2'
+        memory: 4Gi
+      requests:
+        cpu: '1'
+        memory: 4Gi
   storageDeviceSets:
     - config: {}
-      count: 1
+      resources:
+        limits:
+          cpu: '2'
+          memory: 5Gi
+        requests:
+          cpu: '1'
+          memory: 5Gi
+      placement: {}
+      name: ocs-deviceset-odf-thin-csi
       dataPVCTemplate:
         metadata: {}
         spec:
@@ -32,9 +59,7 @@ spec:
           storageClassName: odf-thin-csi
           volumeMode: Block
         status: {}
-      name: ocs-deviceset-odf-thin-csi
-      placement: {}
+      count: 1
+      replica: 3
       portable: true
       preparePlacement: {}
-      replica: 3
-      resources: {}

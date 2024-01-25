@@ -3,5 +3,7 @@ kind: OCSInitialization
 metadata:
   name: ocsinit
   namespace: openshift-storage
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   enableCephTools: true

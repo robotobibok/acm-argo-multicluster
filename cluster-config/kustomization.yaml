@@ -7,3 +7,4 @@ bases:
   - alertmanager-applicationset.yaml
   - machineset-applicationset.yaml
   - odf-operator-application.yaml
+  - odf-instance-application.yaml

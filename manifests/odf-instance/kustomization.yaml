@@ -4,7 +4,8 @@ kind: Kustomization
 namespace: openshift-storage
 
 resources:
-- storagesystem.yaml
+- odf-thin-csi-sc.yaml
+#- storagesystem.yaml
 - storagecluster.yaml
-- ocsinit.yaml
+#- ocsinit.yaml
 
