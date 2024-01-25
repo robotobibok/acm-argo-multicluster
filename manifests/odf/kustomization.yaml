@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - odf-thin-csi-sc.yaml
   - ../odf-operator/
+  - ../odf-instance/
