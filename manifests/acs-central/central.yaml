@@ -8,6 +8,15 @@ metadata:
   namespace: stackrox
 spec:
   central:
+    db:
+      resources:
+      requests:
+        cpu: 2
+        memory: "4G"
+      persistence:
+        persistentVolumeClaim:
+          storageClassName: ocs-storagecluster-ceph-rbd
+          claimName: central-db
     resources:
       requests:
         cpu: 1
