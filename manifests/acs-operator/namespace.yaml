@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: rhacs-operator
   annotations:
     openshift.io/display-name: Red Hat Advanced Cluster Security Operator
-  name: rhacs-operator
+    argocd.argoproj.io/sync-wave: "0"

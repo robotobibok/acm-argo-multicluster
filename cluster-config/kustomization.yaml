@@ -8,3 +8,4 @@ bases:
   - machineset-applicationset.yaml
   - odf-operator-application.yaml
   - odf-instance-application.yaml
+  - acs-operator-applicationset.yaml

@@ -3,8 +3,10 @@ kind: Subscription
 metadata:
   name: rhacs-operator
   namespace: rhacs-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
-  channel: latest
+  channel: stable
   installPlanApproval: Automatic
   name: rhacs-operator
   source: redhat-operators
