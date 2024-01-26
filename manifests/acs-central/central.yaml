@@ -8,6 +8,10 @@ metadata:
   namespace: stackrox
 spec:
   central:
+    resources:
+      requests:
+        cpu: 1
+        memory: "2G"
     exposure:
       loadBalancer:
         enabled: false
