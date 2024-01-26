@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: "https://github.com/robotobibok/acm-argo-multicluster"
         targetRevision: main
-        path: manifests/acs-securedcluster
+        path: manifests/acs-securedcluster/overlays/{{ name }}
       destination:
         name: "{{ cluster }}"
       syncPolicy:
