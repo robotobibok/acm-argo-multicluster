@@ -8,7 +8,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: Prune=false
 spec:
-  replicas: 6
+  replicas: 7
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: infra-dbjl4
