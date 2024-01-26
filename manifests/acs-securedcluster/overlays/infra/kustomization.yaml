@@ -6,6 +6,5 @@ bases:
   - ../../base
 
 resources:
-  - secrets/admission-control-tls-secret.yaml
-  - secrets/collector-tls-secret.yaml
-  - secrets/sensor-tls-secret.yaml
+  - create-cluster-init-bundle-job.yaml
+  - create-cluster-init-bundle-sa.yaml
