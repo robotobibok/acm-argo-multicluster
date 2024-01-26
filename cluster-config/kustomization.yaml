@@ -12,4 +12,4 @@ bases:
   - acs-central-application.yaml
   - acs-securedcluster-applicationset.yaml
   - quay-operator-application.yaml
-#  - quay-registry-application.yaml
+  - quay-registry-application.yaml
