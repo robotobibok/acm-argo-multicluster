@@ -11,3 +11,4 @@ bases:
   - acs-operator-applicationset.yaml
   - acs-central-application.yaml
   - acs-securedcluster-applicationset.yaml
+  - quay-operator-application.yaml
