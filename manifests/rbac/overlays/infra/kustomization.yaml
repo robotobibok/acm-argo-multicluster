@@ -3,3 +3,11 @@ kind: Kustomization
 
 bases:
 - ../../base
+
+patches:
+  - target:
+      version: v1
+      group: user.openshift.io
+      kind: Group
+      name: cluster-admins
+    path: admins.yaml
