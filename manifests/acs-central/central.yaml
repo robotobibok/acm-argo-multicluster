@@ -10,9 +10,9 @@ spec:
   central:
     db:
       resources:
-      requests:
-        cpu: 2
-        memory: "4G"
+        requests:
+          cpu: 2
+          memory: "4G"
       persistence:
         persistentVolumeClaim:
           storageClassName: ocs-storagecluster-ceph-rbd
