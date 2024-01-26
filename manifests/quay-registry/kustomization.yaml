@@ -5,3 +5,6 @@ kind: Kustomization
 resources:
   - thin-sc.yaml
   - ocs-storagecluster-ceph-rbd-sc.yaml
+  - namespace.yaml
+  - quay-config-bundle-secret.yaml
+  - quayregistry.yaml
