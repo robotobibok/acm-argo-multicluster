@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infra-acs-central
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: in-cluster
+  project: infra
+  source:
+    path: manifests/acs-central
+    repoURL: https://github.com/robotobibok/acm-argo-multicluster
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
