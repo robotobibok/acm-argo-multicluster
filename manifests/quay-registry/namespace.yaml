@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: quay-operator
+  name: registry
   annotations:
     openshift.io/display-name: Red Hat Quay Registry
     argocd.argoproj.io/sync-wave: "0"
