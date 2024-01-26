@@ -10,3 +10,4 @@ bases:
   - odf-instance-application.yaml
   - acs-operator-applicationset.yaml
   - acs-central-application.yaml
+  - acs-securedcluster-applicationset.yaml
