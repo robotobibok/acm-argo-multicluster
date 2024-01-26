@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
 - cluster-admin-rolebinding.yaml
 - cluster-admins-group.yaml
+- cluster-admins-rolebinding.yaml
