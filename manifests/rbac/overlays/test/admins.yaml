@@ -1,0 +1,4 @@
+- op: add
+  path: /users
+  value:
+    - admin

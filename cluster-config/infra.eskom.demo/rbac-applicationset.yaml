@@ -9,6 +9,8 @@ spec:
       elements:
       - name: infra
         cluster: in-cluster
+      - name: test
+        cluster: test
   template:
     metadata:
       name: "{{ name }}-rbac"
