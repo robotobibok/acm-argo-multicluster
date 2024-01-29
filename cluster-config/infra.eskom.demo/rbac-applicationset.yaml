@@ -8,9 +8,9 @@ spec:
   - clusters: {}
   template:
     metadata:
-      name: "{{ name }}-rbac"
+      name: "{{ metadata.labels.cluster-name }}-rbac"
     spec:
-      project: "{{ name }}"
+      project: "{{ metadata.labels.cluster-name }}"
       source:
         repoURL: "https://github.com/robotobibok/acm-argo-multicluster"
         targetRevision: main
