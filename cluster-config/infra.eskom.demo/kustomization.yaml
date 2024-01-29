@@ -14,4 +14,6 @@ bases:
   - quay-operator-application.yaml
   - quay-registry-application.yaml
   - gitops-config.yaml
+
   - infra-deploy-test-app.yaml
+  - test-argocd-project.yaml
