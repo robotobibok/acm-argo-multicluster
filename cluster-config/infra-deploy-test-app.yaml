@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: deploy-test
+spec:
+  destination:
+    name: in-cluster
+  project: infra
+  source:
+    path: cluster-deploy/test
+    repoURL: https://github.com/robotobibok/acm-argo-multicluster
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

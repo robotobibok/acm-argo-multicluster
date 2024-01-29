@@ -31,7 +31,6 @@ spec:
     sshPrivateKeySecretRef:
       name: test-ssh-private-key
     imageSetRef:
-       #quay.io/openshift-release-test/ocp-release:4.11.32-x86_64
-      name: img4.12.9-multi-appsub
+      name: img4.14.10-multi-appsub
   pullSecretRef:
     name: test-pull-secret

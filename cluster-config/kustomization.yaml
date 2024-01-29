@@ -13,3 +13,4 @@ bases:
   - acs-securedcluster-applicationset.yaml
   - quay-operator-application.yaml
   - quay-registry-application.yaml
+  - infra-deploy-test-app.yaml

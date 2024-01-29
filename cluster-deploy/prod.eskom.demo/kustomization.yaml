@@ -1,5 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-bases:
-- ../../managed-clusters/prod.eskom.demo
+resources:
+- prod-ns.yaml
+- prod-clusterdeployment.yaml
+- prod-managedcluster.yaml
+- prod-managedclusterinfo.yaml
+#- prod-machinepool-worker.yaml #niepotrzebna, mozna sterowac iloscia workerow z install-config
+#- prod-machinepool-infra.yaml #na poziomie hive, nie ma mozliwosci zmienienia datastore, wiec robimy pozniej z argo
+- prod-klusterletaddonconfig.yaml
+- secrets/prod-vsphere-certs.yaml
+- secrets/prod-vsphere-creds.yaml
+- secrets/prod-install-config.yaml
+- secrets/prod-pull-secret.yaml
+- secrets/prod-ssh-private-key.yaml
