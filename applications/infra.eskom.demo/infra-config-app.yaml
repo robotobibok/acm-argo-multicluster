@@ -7,7 +7,7 @@ spec:
     name: in-cluster
   project: infra
   source:
-    path: cluster-config
+    path: cluster-config/infra.eskom.demo
     repoURL: https://github.com/robotobibok/acm-argo-multicluster
     targetRevision: main
   syncPolicy:
