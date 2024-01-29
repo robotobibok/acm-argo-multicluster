@@ -5,12 +5,7 @@ metadata:
   namespace: openshift-gitops
 spec:
   generators:
-  - list:
-      elements:
-      - name: infra
-        cluster: in-cluster
-      - name: test
-        cluster: test
+  - clusters: {}
   template:
     metadata:
       name: "{{ name }}-rbac"
@@ -21,7 +16,7 @@ spec:
         targetRevision: main
         path: manifests/rbac/overlays/{{ name }}
       destination:
-        name: "{{ cluster }}"
+        name: "{{ name }}"
       syncPolicy:
         automated:
           prune: false
