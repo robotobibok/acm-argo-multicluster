@@ -14,7 +14,7 @@ spec:
       source:
         repoURL: "https://github.com/robotobibok/acm-argo-multicluster"
         targetRevision: main
-        path: manifests/rbac/overlays/{{ name }}
+        path: manifests/rbac/overlays/{{ metadata.labels.cluster-name }}
       destination:
         name: "{{ name }}"
       syncPolicy:
