@@ -16,7 +16,7 @@ spec:
     - kind: redis
       managed: true
     - kind: horizontalpodautoscaler
-      managed: true
+      managed: false
     - kind: route
       managed: true
     - kind: mirror
