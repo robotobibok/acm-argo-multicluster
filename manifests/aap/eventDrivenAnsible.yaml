@@ -1,7 +1,7 @@
 apiVersion: eda.ansible.com/v1alpha1
 kind: EDA
 metadata:
-  name: kruk-eda
+  name: eskom-eda
   namespace: ansible-automation-platform
   annotations:
     argocd.argoproj.io/sync-wave: "5"
