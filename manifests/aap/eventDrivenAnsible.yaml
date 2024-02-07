@@ -1,0 +1,27 @@
+apiVersion: eda.ansible.com/v1alpha1
+kind: EDA
+metadata:
+  name: kruk-eda
+  namespace: ansible-automation-platform
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  route_tls_termination_mechanism: Edge
+  ingress_type: Route
+  loadbalancer_port: 80
+  no_log: true
+  image_pull_policy: IfNotPresent
+  ui:
+    replicas: 1
+  set_self_labels: true
+  api:
+    gunicorn_workers: 2
+    replicas: 1
+  redis:
+    replicas: 1
+  admin_user: admin
+  loadbalancer_protocol: http
+  worker:
+    replicas: 2
+  automation_server_url: XXX
