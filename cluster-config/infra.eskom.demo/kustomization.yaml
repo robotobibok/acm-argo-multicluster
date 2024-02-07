@@ -15,5 +15,5 @@ bases:
   - quay-registry-application.yaml
   - gitops-config.yaml
 
-  - infra-deploy-test-app.yaml
+  #- infra-deploy-test-app.yaml #tymczasowe zwolnienie RAM
   - test-argocd-project.yaml
