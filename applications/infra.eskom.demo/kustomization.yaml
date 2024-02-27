@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
+  - repo-gitlab-ssh-secret.yaml
   - infra-appproj.yaml
   - infra-config-app.yaml
 #  - infra-deploy-test-app.yaml
