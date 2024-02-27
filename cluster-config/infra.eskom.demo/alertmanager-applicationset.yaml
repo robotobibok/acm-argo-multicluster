@@ -15,7 +15,7 @@ spec:
     spec:
       project: "{{ name }}"
       source:
-        repoURL: "https://github.com/robotobibok/acm-argo-multicluster"
+        repoURL: "git@gitlab.eskom.demo:lab/ocp.git"
         targetRevision: main
         path: manifests/alertmanager/overlays/{{ name }}
       destination:
